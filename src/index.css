@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-parchment: #FAF8F5;
+    --color-linen: #F5EFEB;
+    --color-espresso: #1D1714;
+    --color-terracotta: #B35438;
+    --color-sage: #3D5A46;
+    --color-honey: #C98630;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #1D1714;
+    overflow-x: hidden;
+  }
+
+  /* Accessible focus indicators */
+  *:focus-visible {
+    outline: 2px solid #B35438;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Subtle yarn stitch motif */
+  .stitch-border {
+    border-style: dashed;
+    border-width: 1.5px;
+    border-color: #D5C4B1;
+  }
+
+  .stitch-border-t {
+    border-top-style: dashed;
+    border-top-width: 1.5px;
+    border-top-color: #D5C4B1;
+  }
+
+  .stitch-border-b {
+    border-bottom-style: dashed;
+    border-bottom-width: 1.5px;
+    border-bottom-color: #D5C4B1;
+  }
+
+  /* Tactile fabric label effect */
+  .fabric-tag {
+    position: relative;
+    background: #FAF6F2;
+    border: 1px solid #E4D7C9;
+    box-shadow: 0 1px 2px rgba(29, 23, 20, 0.04);
+  }
+
+  /* Tactile card surface */
+  .craft-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EFE7DF;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+
+  .craft-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px -6px rgba(29, 23, 20, 0.08), 0 4px 10px -2px rgba(29, 23, 20, 0.03);
+    border-color: #D5C4B1;
+  }
+
+  /* Interactive button micro-press (Emil Kowalski principle) */
+  .btn-tactile {
+    transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-tactile:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Custom warm scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5C4B1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B35438;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
