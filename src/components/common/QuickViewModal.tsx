@@ -87,18 +87,10 @@ export const QuickViewModal: React.FC = () => {
             {/* Info Column */}
             <div className="p-6 sm:p-8 flex flex-col justify-between">
               <div>
-                {/* Artisan Tag */}
+                {/* Category & Craft Badge */}
                 <div className="flex items-center space-x-2 mb-3">
-                  <img
-                    src={product.artisan.avatar}
-                    alt={product.artisan.name}
-                    className="w-6 h-6 rounded-full object-cover border border-linen-400"
-                  />
-                  <span className="text-xs font-medium text-espresso">
-                    Hand-hooked by {product.artisan.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-umber-muted">
-                    ({product.artisan.location})
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-terracotta-700 bg-terracotta-50 px-2.5 py-0.5 rounded-full border border-terracotta-200 font-medium">
+                    100% Handcrafted Crochet
                   </span>
                 </div>
 
@@ -186,7 +178,7 @@ export const QuickViewModal: React.FC = () => {
                   onClick={handleViewFullPage}
                   className="w-full py-2 text-xs text-umber-muted hover:text-espresso font-medium flex items-center justify-center space-x-1"
                 >
-                  <span>View complete maker story, specs & care instructions</span>
+                  <span>View complete specifications & care instructions</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

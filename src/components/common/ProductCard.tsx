@@ -21,29 +21,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div className="craft-card rounded-2xl overflow-hidden flex flex-col group relative bg-white">
-      
-      {/* Top Artisan Provenance Tag */}
-      <div className="p-3 bg-linen-100/90 border-b border-linen-200 flex items-center justify-between text-xs">
-        <div className="flex items-center space-x-2 min-w-0">
-          <img
-            src={product.artisan.avatar}
-            alt={product.artisan.name}
-            className="w-5 h-5 rounded-full object-cover border border-linen-400 flex-shrink-0"
-          />
-          <span className="text-[11px] font-medium text-espresso truncate">
-            {product.artisan.name}
-          </span>
-          <span className="text-[10px] font-mono text-umber-muted hidden sm:inline">
-            • {product.artisan.district}
-          </span>
-        </div>
-
-        <span className="text-[10px] font-mono text-terracotta-700 bg-terracotta-50 px-2 py-0.5 rounded-full border border-terracotta-200 flex-shrink-0 flex items-center space-x-1">
-          <Clock className="w-2.5 h-2.5 mr-0.5" />
-          <span>{product.hoursToMake}h hooked</span>
-        </span>
-      </div>
-
       {/* Product Image Stage */}
       <div className="relative aspect-square overflow-hidden bg-linen-200 cursor-pointer" onClick={() => navigateTo('product', product.id)}>
         <img

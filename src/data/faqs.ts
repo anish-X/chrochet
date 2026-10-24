@@ -24,7 +24,7 @@ export const faqs: FAQItem[] = [
   {
     category: 'shoppers',
     question: 'What if the piece does not fit or looks different from photos?',
-    answer: 'We offer a 7-Day Handcrafted Exchange Guarantee. Because our pieces are handmade with organic yarns, minor stitch variations are part of their human charm. However, if the fit or finish does not match your expectations, contact our Kathmandu studio on WhatsApp (+977 9801234567) within 7 days for an exchange or full refund.'
+    answer: 'We offer customer-first exchange support. Because our pieces are handmade with organic yarns, minor stitch variations are part of their human charm. However, if the fit or finish does not match your expectations, contact our Kathmandu studio on WhatsApp (+977 9801234567) and our team will arrange a hassle-free exchange or resolution.'
   },
   {
     category: 'shoppers',
@@ -40,8 +40,8 @@ export const faqs: FAQItem[] = [
   },
   {
     category: 'creators',
-    question: 'What percentage of the sales price do I keep?',
-    answer: 'Creators keep 80% to 85% of the retail selling price. Sefung Crochet charges a transparent 15-20% platform share that covers studio photography, high-grade eco-packaging, payment gateway processing fees, customer support, and marketing. There are zero listing fees or upfront costs.'
+    question: 'How does pricing and payouts work for creators?',
+    answer: 'Creators receive fair, transparent payouts for every finished piece. Sefung Crochet handles professional studio photography, luxury packaging, payment gateway processing fees, customer support, and marketing. There are zero listing fees or upfront costs.'
   },
   {
     category: 'creators',

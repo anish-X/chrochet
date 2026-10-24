@@ -62,7 +62,7 @@ export const CreatorInvitation: React.FC = () => {
                     3
                   </div>
                   <h4 className="font-bold text-espresso">Weekly Payouts</h4>
-                  <p className="text-[11px] text-umber-muted mt-1">Earn 80%+ direct to your eSewa, Khalti, or bank account.</p>
+                  <p className="text-[11px] text-umber-muted mt-1">Prompt payments directly to your eSewa, Khalti, or bank account.</p>
                 </div>
               </div>
 

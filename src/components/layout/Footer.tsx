@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
             <div>
               <h4 className="font-semibold text-white text-sm">Empowering Local Makers</h4>
               <p className="text-stone-300 mt-1 leading-relaxed">
-                Creators retain 80%+ of retail prices with transparent weekly payouts via eSewa, Khalti, or bank transfer.
+                Creators receive transparent weekly payouts via eSewa, Khalti, or bank transfer with zero listing fees.
               </p>
             </div>
           </div>

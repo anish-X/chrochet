@@ -86,9 +86,9 @@ export const SellWithUsPage: React.FC = () => {
             <div className="w-12 h-12 rounded-xl bg-terracotta-50 text-terracotta-600 flex items-center justify-center">
               <Banknote className="w-6 h-6" />
             </div>
-            <h3 className="font-serif text-lg font-bold text-espresso">Keep 80% to 85% of Retail</h3>
+            <h3 className="font-serif text-lg font-bold text-espresso">Fair Transparent Pricing</h3>
             <p className="text-xs text-umber leading-relaxed font-light">
-              You set your target piece price based on your time and yarn cost. Sefung Crochet takes only a transparent 15-20% fee to cover photoshoots, packaging, customer care, and marketing. Zero listing fees.
+              You set your target piece price based on your time and yarn cost. Sefung Crochet handles professional photography, luxury packaging, nationwide delivery, and customer care with prompt weekly payouts. Zero listing fees.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export const SellWithUsPage: React.FC = () => {
             </div>
             <h3 className="font-serif text-lg font-bold text-espresso">Nationwide Courier Logistics</h3>
             <p className="text-xs text-umber leading-relaxed font-light">
-              We pack orders in custom compostable unbleached boxes with signed maker provenance tags. We manage dispatch across all 7 provinces of Nepal and handle customer returns directly.
+              We pack orders in custom compostable unbleached boxes with verified handmade tags. We manage dispatch across all 7 provinces of Nepal and handle customer returns directly.
             </p>
           </div>
         </div>

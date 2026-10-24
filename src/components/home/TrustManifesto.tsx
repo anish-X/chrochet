@@ -1,6 +1,6 @@
 import React from 'react';
 import { useShop } from '../../context/ShopContext';
-import { ShieldCheck, HeartHandshake, Sparkles, RefreshCw, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const TrustManifesto: React.FC = () => {
   const { navigateTo } = useShop();
@@ -13,22 +13,10 @@ export const TrustManifesto: React.FC = () => {
       description: 'Unlike commercial sweaters which are knitted on high-speed industrial knitting machines, crochet stitches require looping back through prior active loops with an open hook. No mechanical loom in the world has ever solved this. When you hold crochet, you are holding the undeniable work of human hands.',
     },
     {
-      icon: HeartHandshake,
-      title: 'Makers Keep 80–85% of Retail',
-      badge: 'Economic Dignity',
-      description: 'Traditional middlemen in Nepal take 60–70% of craft revenues. At Sefung Crochet, creators set their own prices and receive the vast majority of every sale, paid out weekly via eSewa or bank transfer to fuel independent financial freedom.',
-    },
-    {
       icon: Sparkles,
       title: 'Central Studio Quality Inspection',
       badge: 'Jhamsikhel Lab',
       description: 'Every completed piece from Bhaktapur, Patan, or Pokhara arrives at our Kathmandu studio for yarn tension testing, seam security verification, and gentle cedar steaming before being packed in compostable packaging.',
-    },
-    {
-      icon: RefreshCw,
-      title: '7-Day Handcrafted Guarantee',
-      badge: 'Risk-Free Discovery',
-      description: 'We know buying handmade textiles online requires faith. If a piece does not drape the way you envisioned or the dimensions do not suit your space, our WhatsApp concierge arranges a hassle-free exchange or full refund.',
     }
   ];
 
@@ -49,7 +37,7 @@ export const TrustManifesto: React.FC = () => {
           </p>
         </div>
 
-        {/* 4 Pillars Grid */}
+        {/* 2 Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-12 sm:mt-16">
           {trustPillars.map((pillar, idx) => {
             const Icon = pillar.icon;
@@ -98,7 +86,7 @@ export const TrustManifesto: React.FC = () => {
             onClick={() => navigateTo('sell')}
             className="btn-tactile px-5 py-2.5 bg-honey-500 hover:bg-honey-400 text-espresso font-semibold text-xs rounded-xl shadow-craft-sm transition-colors flex items-center space-x-1.5 flex-shrink-0"
           >
-            <span>Read Creator Requirements</span>
+            <span>Sell With Us</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -107,4 +95,3 @@ export const TrustManifesto: React.FC = () => {
     </section>
   );
 };
-

@@ -121,13 +121,13 @@ export const HeroSection: React.FC = () => {
                 {/* Overlay Vignette and Tag */}
                 <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                   <span className="font-mono text-[10px] uppercase tracking-widest text-honey-300">
-                    Artisan Spotlight • Bhaktapur
+                    Handcrafted Wearables
                   </span>
                   <h3 className="font-serif text-xl font-bold mt-1">
                     "Patience you can wear."
                   </h3>
                   <p className="text-xs text-stone-200 mt-1">
-                    Sunita Prajapati at work on the Patan Heritage Cardigan.
+                    The Patan Heritage Open-Stitch Cardigan.
                   </p>
                 </div>
               </div>
@@ -148,15 +148,15 @@ export const HeroSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Floating Badge 2: Artisan Direct Earnings */}
+              {/* Floating Badge 2: Material Standard */}
               <div className="absolute -bottom-5 -right-4 sm:-right-6 bg-white p-3.5 rounded-2xl shadow-craft-lift border border-linen-300 flex items-center space-x-3 max-w-[230px]">
                 <div className="w-10 h-10 rounded-xl bg-sage-50 text-sage-700 flex items-center justify-center font-bold text-xs flex-shrink-0 border border-sage-200">
-                  82%
+                  <Sparkles className="w-5 h-5 text-sage-700" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono uppercase text-umber-muted block">Direct Creator Share</span>
+                  <span className="text-[10px] font-mono uppercase text-umber-muted block">Material Standard</span>
                   <span className="text-xs font-semibold text-espresso leading-tight block">
-                    Fair, transparent artisan payout
+                    100% Organic & Natural Fibers
                   </span>
                 </div>
               </div>

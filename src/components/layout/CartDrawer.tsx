@@ -173,8 +173,8 @@ export const CartDrawer: React.FC = () => {
                                 <Trash2 className="w-3.5 h-3.5" />
                               </button>
                             </div>
-                            <span className="text-[11px] font-mono text-umber-muted block">
-                              By {item.product.artisan.name} ({item.product.artisan.district})
+                            <span className="text-[11px] font-mono text-umber-muted block capitalize">
+                              {item.product.category} • Handcrafted in Nepal
                             </span>
                           </div>
 

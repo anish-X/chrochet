@@ -1,47 +1,53 @@
 import React, { useState } from 'react';
 import { useShop } from '../../context/ShopContext';
-import { products, getProductById } from '../../data/products';
-import { getReviewsForProduct } from '../../data/reviews';
 import { ProductCard } from '../common/ProductCard';
+import { products } from '../../data/products';
+import { getReviewsForProduct } from '../../data/reviews';
 import { 
-  ArrowLeft, 
-  ShoppingBag, 
   Heart, 
+  ShoppingBag, 
   Clock, 
   ShieldCheck, 
-  Truck, 
-  Sparkles, 
   Check, 
   Star, 
-  MapPin, 
+  Share2, 
+  ArrowLeft, 
   ChevronRight,
-  Share2,
   MessageCircle,
+  Truck,
+  Sparkles,
   HelpCircle
 } from 'lucide-react';
 
 export const ProductDetailPage: React.FC = () => {
-  const { currentProductId, navigateTo, addToCart, toggleWishlist, isInWishlist, showToast } = useShop();
+  const { 
+    currentProductId, 
+    navigateTo, 
+    addToCart, 
+    toggleWishlist, 
+    isInWishlist,
+    showToast 
+  } = useShop();
 
-  const product = getProductById(currentProductId || '') || products[0];
+  const product = products.find(p => p.id === currentProductId) || products[0];
   const reviews = getReviewsForProduct(product.id);
   const isFavorited = isInWishlist(product.id);
 
   const [activeImage, setActiveImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState<'details' | 'maker' | 'care' | 'delivery'>('details');
+  const [activeTab, setActiveTab] = useState<'details' | 'care' | 'delivery'>('details');
   const [customInquiryOpen, setCustomInquiryOpen] = useState(false);
   const [inquiryText, setInquiryText] = useState('');
 
-  // Related products from same category or artisan
+  // Related products from same category
   const relatedProducts = products
-    .filter(p => p.id !== product.id && (p.category === product.category || p.artisanId === product.artisanId))
+    .filter(p => p.id !== product.id && p.category === product.category)
     .slice(0, 3);
 
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setCustomInquiryOpen(false);
-    showToast('Inquiry Sent to Artisan', `Sunita and the Sefung Crochet studio will WhatsApp you with custom sizing options.`, 'terracotta');
+    showToast('Inquiry Sent', `Our studio team will WhatsApp you with custom sizing options.`, 'terracotta');
     setInquiryText('');
   };
 
@@ -49,7 +55,7 @@ export const ProductDetailPage: React.FC = () => {
     if (navigator.share) {
       navigator.share({
         title: product.title,
-        text: `Handmade crochet in Nepal by ${product.artisan.name}: ${product.title}`,
+        text: `Handmade crochet in Nepal: ${product.title}`,
         url: window.location.href,
       }).catch(() => {});
     } else {
@@ -62,31 +68,29 @@ export const ProductDetailPage: React.FC = () => {
     <div className="py-8 sm:py-14 bg-parchment min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Breadcrumb & Navigation */}
-        <div className="flex items-center justify-between mb-8 text-xs">
-          <button
-            onClick={() => navigateTo('shop')}
-            className="inline-flex items-center space-x-1.5 text-umber hover:text-terracotta-700 transition-colors font-medium"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to All Pieces</span>
+        {/* Breadcrumb Trail */}
+        <nav className="flex items-center space-x-2 text-xs font-mono text-umber-muted mb-8 overflow-x-auto whitespace-nowrap">
+          <button onClick={() => navigateTo('home')} className="hover:text-espresso transition-colors">
+            Home
           </button>
+          <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
+          <button onClick={() => navigateTo('shop')} className="hover:text-espresso transition-colors">
+            Catalog
+          </button>
+          <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
+          <button onClick={() => navigateTo('shop', undefined, product.category)} className="hover:text-espresso transition-colors capitalize">
+            {product.category}
+          </button>
+          <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
+          <span className="text-espresso font-semibold truncate max-w-[200px]">
+            {product.title}
+          </span>
+        </nav>
 
-          <div className="flex items-center space-x-2 text-umber-muted font-mono text-[11px] hidden sm:flex">
-            <span className="cursor-pointer hover:text-espresso" onClick={() => navigateTo('home')}>Home</span>
-            <ChevronRight className="w-3 h-3" />
-            <span className="cursor-pointer hover:text-espresso" onClick={() => navigateTo('shop', undefined, product.category)}>
-              {product.category}
-            </span>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-espresso font-semibold truncate max-w-[200px]">{product.title}</span>
-          </div>
-        </div>
-
-        {/* Main Product Showcase Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 bg-white rounded-3xl p-6 sm:p-10 border border-linen-300 shadow-craft-md mb-16">
+        {/* Top Product Hero: Gallery + Buying Panel */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-16">
           
-          {/* Left Column: Multi-Angle Imagery */}
+          {/* Left Column: Visual Gallery */}
           <div className="lg:col-span-7 space-y-4">
             <div className="relative aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden bg-linen-200 border border-linen-300 shadow-craft-sm">
               <img
@@ -94,21 +98,6 @@ export const ProductDetailPage: React.FC = () => {
                 alt={product.title}
                 className="w-full h-full object-cover object-center"
               />
-
-              {/* Floating maker badge */}
-              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full border border-linen-300 shadow-craft-sm flex items-center space-x-2">
-                <img
-                  src={product.artisan.avatar}
-                  alt={product.artisan.name}
-                  className="w-5 h-5 rounded-full object-cover"
-                />
-                <span className="text-xs font-semibold text-espresso">
-                  {product.artisan.name}
-                </span>
-                <span className="text-[10px] font-mono text-terracotta-600 bg-terracotta-50 px-1.5 py-0.2 rounded">
-                  {product.artisan.district}
-                </span>
-              </div>
 
               {/* Action buttons on image */}
               <div className="absolute top-4 right-4 flex space-x-2">
@@ -149,122 +138,110 @@ export const ProductDetailPage: React.FC = () => {
                 ))}
               </div>
             )}
-
-            {/* Trust Callout beneath gallery */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-linen-100/70 border border-linen-300 text-xs font-mono text-umber">
-              <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-terracotta-500 flex-shrink-0" />
-                <span>{product.hoursToMake} hrs Hand-Stitched</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <ShieldCheck className="w-4 h-4 text-sage-600 flex-shrink-0" />
-                <span>100% Non-Machine Loop</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Truck className="w-4 h-4 text-honey-600 flex-shrink-0" />
-                <span>Kathmandu 24h Courier</span>
-              </div>
-            </div>
-
           </div>
 
-          {/* Right Column: Narrative, Specs, Add to Bag */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+          {/* Right Column: Buying Specifications & Purchase */}
+          <div className="lg:col-span-5 space-y-6">
             
-            <div className="space-y-4">
-              
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs uppercase tracking-wider text-terracotta-600 font-bold">
-                  {product.category} • Collection Piece
-                </span>
-                <span className="text-[11px] font-mono text-sage-800 bg-sage-50 px-2 py-0.5 rounded-full border border-sage-200">
-                  {product.readyToShip ? 'Ready to Ship' : `Made to Order (${product.leadTimeDays}d)`}
-                </span>
+            {/* Category and Tags */}
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs uppercase tracking-widest text-terracotta-700 font-semibold">
+                {product.category}
+              </span>
+              <div className="flex items-center space-x-1.5 text-xs text-honey-500 font-mono">
+                <Star className="w-4 h-4 fill-current" />
+                <span className="font-bold text-espresso">{product.rating}</span>
+                <span className="text-umber-muted">({product.reviewCount} verified reviews)</span>
               </div>
-
-              <div>
-                <h1 className="font-serif text-2xl sm:text-3xl font-bold text-espresso leading-snug">
-                  {product.title}
-                </h1>
-                {product.nepaliTitle && (
-                  <span className="text-xs text-umber-muted font-medium mt-1 block">
-                    {product.nepaliTitle}
-                  </span>
-                )}
-              </div>
-
-              {/* Price & Rating */}
-              <div className="flex items-baseline justify-between pt-1 pb-3 border-b border-linen-200">
-                <div className="flex items-baseline space-x-3">
-                  <span className="font-mono text-2xl sm:text-3xl font-bold text-terracotta-700">
-                    NPR {product.price.toLocaleString()}
-                  </span>
-                  {product.originalPrice && (
-                    <span className="font-mono text-sm text-stone-400 line-through">
-                      NPR {product.originalPrice.toLocaleString()}
-                    </span>
-                  )}
-                </div>
-
-                <div className="flex items-center space-x-1.5 text-xs">
-                  <div className="flex text-honey-500">
-                    <Star className="w-4 h-4 fill-current" />
-                  </div>
-                  <span className="font-bold text-espresso font-mono">{product.rating}</span>
-                  <span className="text-umber-muted text-[11px]">({product.reviewCount} reviews)</span>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-xs sm:text-sm text-umber leading-relaxed font-light">
-                {product.description}
-              </p>
-
-              {/* Highlight Features list */}
-              <div className="space-y-2 pt-2">
-                <span className="font-mono text-xs uppercase tracking-wider text-espresso font-semibold block">
-                  Handcrafted Highlights:
-                </span>
-                <ul className="space-y-1.5 text-xs text-umber">
-                  {product.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start space-x-2">
-                      <Check className="w-3.5 h-3.5 text-sage-600 mt-0.5 flex-shrink-0" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Creator Box */}
-              <div className="p-4 rounded-2xl bg-linen-100 border border-linen-300 flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <img
-                    src={product.artisan.avatar}
-                    alt={product.artisan.name}
-                    className="w-11 h-11 rounded-full object-cover border-2 border-white shadow-sm"
-                  />
-                  <div>
-                    <h4 className="text-xs font-bold text-espresso">
-                      Crafted by {product.artisan.name}
-                    </h4>
-                    <span className="text-[11px] font-mono text-umber-muted block">
-                      {product.artisan.location} • {product.artisan.yearsExperience} yrs master
-                    </span>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => setCustomInquiryOpen(true)}
-                  className="text-xs font-mono text-terracotta-600 hover:text-terracotta-800 font-semibold underline underline-offset-2"
-                >
-                  Request Custom
-                </button>
-              </div>
-
             </div>
 
-            {/* Add to Bag Controls */}
-            <div className="pt-4 border-t border-linen-300 space-y-3">
+            {/* Title & Nepali Title */}
+            <div>
+              <h1 className="font-serif text-2xl sm:text-3xl font-bold text-espresso leading-tight">
+                {product.title}
+              </h1>
+              {product.nepaliTitle && (
+                <span className="text-xs sm:text-sm text-umber font-medium mt-1 block">
+                  {product.nepaliTitle}
+                </span>
+              )}
+            </div>
+
+            {/* Price block */}
+            <div className="p-4 bg-white rounded-2xl border border-linen-300 shadow-craft-sm flex items-baseline space-x-3">
+              <span className="font-mono text-2xl sm:text-3xl font-bold text-terracotta-700">
+                NPR {product.price.toLocaleString()}
+              </span>
+              {product.originalPrice && (
+                <span className="font-mono text-sm text-stone-400 line-through">
+                  NPR {product.originalPrice.toLocaleString()}
+                </span>
+              )}
+              <span className="text-[11px] font-mono text-sage-700 bg-sage-50 px-2 py-0.5 rounded border border-sage-200 ml-auto">
+                All Taxes Included
+              </span>
+            </div>
+
+            {/* Core Craft Specs Grid */}
+            <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="p-3 bg-white rounded-xl border border-linen-300 space-y-1">
+                <span className="text-[10px] font-mono text-umber-muted uppercase block">Hand-Hooking Time</span>
+                <div className="flex items-center space-x-1.5 font-bold text-espresso">
+                  <Clock className="w-4 h-4 text-terracotta-500" />
+                  <span>{product.hoursToMake} hours of dedicated hooking</span>
+                </div>
+              </div>
+
+              <div className="p-3 bg-white rounded-xl border border-linen-300 space-y-1">
+                <span className="text-[10px] font-mono text-umber-muted uppercase block">Yarn Material</span>
+                <div className="flex items-center space-x-1.5 font-bold text-espresso truncate">
+                  <ShieldCheck className="w-4 h-4 text-sage-600 flex-shrink-0" />
+                  <span className="truncate">{product.yarnType.split('(')[0]}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Description */}
+            <p className="text-xs sm:text-sm text-umber leading-relaxed font-light">
+              {product.description}
+            </p>
+
+            {/* Key Features Bullet List */}
+            <div className="space-y-2 pt-2">
+              <span className="text-xs font-mono font-semibold text-espresso uppercase tracking-wider block">
+                Handcrafted Highlights
+              </span>
+              <ul className="space-y-2 text-xs text-umber">
+                {product.features.map((feat, idx) => (
+                  <li key={idx} className="flex items-start space-x-2">
+                    <Check className="w-3.5 h-3.5 text-sage-600 mt-0.5 flex-shrink-0" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Custom Sizing Box */}
+            <div className="p-4 rounded-2xl bg-linen-100 border border-linen-300 flex items-center justify-between">
+              <div>
+                <h4 className="text-xs font-bold text-espresso">
+                  Custom Sizing or Color?
+                </h4>
+                <span className="text-[11px] font-mono text-umber-muted block">
+                  Bespoke dimensions & made-to-measure orders available
+                </span>
+              </div>
+
+              <button
+                onClick={() => setCustomInquiryOpen(true)}
+                className="text-xs font-mono text-terracotta-600 hover:text-terracotta-800 font-semibold underline underline-offset-2"
+              >
+                Request Custom
+              </button>
+            </div>
+
+            {/* Purchase CTA controls */}
+            <div className="pt-4 border-t border-linen-300 space-y-4">
               <div className="flex items-center space-x-3">
                 {/* Quantity */}
                 <div className="flex items-center border border-linen-400 rounded-xl bg-white px-3 py-2 text-xs">
@@ -274,7 +251,7 @@ export const ProductDetailPage: React.FC = () => {
                   >
                     -
                   </button>
-                  <span className="font-mono font-semibold w-6 text-center">{quantity}</span>
+                  <span className="font-mono font-semibold w-8 text-center">{quantity}</span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
                     className="font-bold text-umber hover:text-espresso w-6 text-center"
@@ -283,20 +260,22 @@ export const ProductDetailPage: React.FC = () => {
                   </button>
                 </div>
 
-                {/* Primary Add to Bag button */}
+                {/* Add to Bag */}
                 <button
                   onClick={() => addToCart(product, quantity)}
-                  className="btn-tactile flex-1 py-3 px-6 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2"
+                  className="btn-tactile flex-1 py-3.5 px-6 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-craft-md flex items-center justify-center space-x-2 transition-all"
                 >
                   <ShoppingBag className="w-4 h-4" />
-                  <span>Add to Bag • NPR {(product.price * quantity).toLocaleString()}</span>
+                  <span>Add {quantity > 1 ? `${quantity} Items` : 'to Bag'}</span>
                 </button>
               </div>
 
-              {/* Studio Dispatch note */}
-              <div className="text-[11px] font-mono text-umber-muted flex items-center justify-center space-x-1.5 pt-1">
-                <Truck className="w-3.5 h-3.5 text-sage-600" />
-                <span>Free Kathmandu Valley dispatch above NPR 2,500</span>
+              <div className="flex items-center justify-between text-[11px] font-mono text-umber-muted pt-2">
+                <span className="flex items-center">
+                  <Truck className="w-3.5 h-3.5 mr-1 text-sage-600" />
+                  {product.readyToShip ? 'Dispatches within 24 hours' : `Made to order: ${product.leadTimeDays} days`}
+                </span>
+                <span>Kathmandu Delivery: NPR 100</span>
               </div>
             </div>
 
@@ -304,12 +283,11 @@ export const ProductDetailPage: React.FC = () => {
 
         </div>
 
-        {/* Tabbed In-Depth Information: Specifications, Care, Provenance */}
+        {/* Tabbed In-Depth Information: Specifications, Care, Delivery */}
         <div className="bg-white rounded-3xl p-6 sm:p-10 border border-linen-300 shadow-craft-sm mb-16">
           <div className="flex border-b border-linen-300 space-x-6 text-xs sm:text-sm font-medium overflow-x-auto pb-px">
             {[
               { id: 'details', label: 'Craft & Materials' },
-              { id: 'maker', label: 'About the Artisan' },
               { id: 'care', label: 'Washing & Care Guide' },
               { id: 'delivery', label: 'Delivery & Exchange' },
             ].map(tab => (
@@ -348,29 +326,9 @@ export const ProductDetailPage: React.FC = () => {
                     Unlike knitwear that can be mass-produced in automated factories, crochet requires each stitch to be hand-locked by human fingers. This piece took {product.hoursToMake} documented hours of focused attention.
                   </p>
                   <p>
-                    Each creation arrives with a hand-stamped linen card stating the maker's name, creation hours, and unique serial number.
+                    Each creation arrives with an authenticated care card stating the creation hours and unique serial number.
                   </p>
                 </div>
-              </div>
-            )}
-
-            {activeTab === 'maker' && (
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <img
-                    src={product.artisan.avatar}
-                    alt={product.artisan.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-terracotta-300"
-                  />
-                  <div>
-                    <h4 className="font-serif text-lg font-bold text-espresso">{product.artisan.name}</h4>
-                    <span className="text-xs font-mono text-terracotta-600">{product.artisan.location}</span>
-                  </div>
-                </div>
-                <blockquote className="italic font-serif text-espresso p-4 bg-linen-100 rounded-xl border-l-4 border-terracotta-500">
-                  "{product.artisan.quote}"
-                </blockquote>
-                <p>{product.artisan.bio}</p>
               </div>
             )}
 
@@ -384,12 +342,12 @@ export const ProductDetailPage: React.FC = () => {
                     <p className="text-[11px] text-umber-muted mt-1">Prevents fiber shrinkage and relaxes stitches.</p>
                   </div>
                   <div className="p-3 bg-linen-100 rounded-lg">
-                    <strong>2. Never Wring</strong>
-                    <p className="text-[11px] text-umber-muted mt-1">Roll gently in a clean dry towel to squeeze water.</p>
+                    <strong>2. Lay Flat to Dry</strong>
+                    <p className="text-[11px] text-umber-muted mt-1">Never hang wet crochet to prevent vertical stretching.</p>
                   </div>
                   <div className="p-3 bg-linen-100 rounded-lg">
-                    <strong>3. Dry Flat in Shade</strong>
-                    <p className="text-[11px] text-umber-muted mt-1">Never hang on hangers while wet to prevent elongation.</p>
+                    <strong>3. Mild Liquid Soap</strong>
+                    <p className="text-[11px] text-umber-muted mt-1">Protects natural plant dyes and wool lanolin.</p>
                   </div>
                 </div>
               </div>
@@ -397,14 +355,14 @@ export const ProductDetailPage: React.FC = () => {
 
             {activeTab === 'delivery' && (
               <div className="space-y-4 max-w-2xl">
-                <h4 className="font-serif text-base font-bold text-espresso">Delivery & 7-Day Exchange</h4>
+                <h4 className="font-serif text-base font-bold text-espresso">Delivery & Exchange Policy</h4>
                 <p>
                   We dispatch daily from our Kathmandu studio in Jhamsikhel, Lalitpur. All packages are securely wrapped in compostable paper without single-use plastics.
                 </p>
                 <ul className="space-y-1.5 list-disc list-inside">
                   <li><strong>Kathmandu Valley:</strong> 24–48 hours delivery (Free above NPR 2,500)</li>
                   <li><strong>Outside Valley:</strong> 2–4 business days via express courier</li>
-                  <li><strong>7-Day Handcrafted Exchange:</strong> If sizing or feel does not suit you, contact WhatsApp for immediate support.</li>
+                  <li><strong>Handcrafted Exchange Policy:</strong> If sizing or feel does not suit you, contact WhatsApp for immediate support.</li>
                 </ul>
               </div>
             )}
@@ -416,7 +374,7 @@ export const ProductDetailPage: React.FC = () => {
           <div className="flex items-center justify-between mb-8">
             <div>
               <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
-                Customer Voices
+                Customer Feedback
               </span>
               <h3 className="font-serif text-2xl font-bold text-espresso mt-1">
                 Verified Reviews ({reviews.length})
@@ -426,7 +384,7 @@ export const ProductDetailPage: React.FC = () => {
 
           {reviews.length === 0 ? (
             <div className="p-8 bg-white rounded-2xl border border-linen-300 text-center text-xs text-umber">
-              Be the first to review this small-batch creation! Every purchase directly supports independent Nepali artisans.
+              Be the first to review this small-batch handcrafted creation!
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -484,7 +442,7 @@ export const ProductDetailPage: React.FC = () => {
               Custom Size or Color Inquiry
             </h4>
             <p className="text-xs text-umber">
-              Need this {product.title} in a custom chest size, strap length, or natural dye shade? Send details directly to {product.artisan.name}.
+              Need this {product.title} in a custom chest size, strap length, or natural dye shade? Send details directly to our studio team.
             </p>
             <form onSubmit={handleCustomSubmit} className="space-y-3">
               <textarea
@@ -505,7 +463,7 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setCustomInquiryOpen(false)}
-                  className="px-4 py-2.5 bg-linen-200 text-espresso text-xs font-medium rounded-xl"
+                  className="px-4 py-2.5 bg-linen-200 text-espresso text-xs font-semibold rounded-xl hover:bg-linen-300"
                 >
                   Cancel
                 </button>
@@ -518,4 +476,3 @@ export const ProductDetailPage: React.FC = () => {
     </div>
   );
 };
-

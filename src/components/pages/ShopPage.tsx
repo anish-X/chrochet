@@ -77,9 +77,8 @@ export const ShopPage: React.FC = () => {
         const query = searchQuery.toLowerCase();
         const matchesTitle = product.title.toLowerCase().includes(query);
         const matchesDesc = product.description.toLowerCase().includes(query);
-        const matchesArtisan = product.artisan.name.toLowerCase().includes(query);
         const matchesTags = product.tags.some(t => t.toLowerCase().includes(query));
-        if (!matchesTitle && !matchesDesc && !matchesArtisan && !matchesTags) {
+        if (!matchesTitle && !matchesDesc && !matchesTags) {
           return false;
         }
       }
@@ -245,10 +244,10 @@ export const ShopPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Artisan District */}
+              {/* Region */}
               <div className="pt-2 border-t border-linen-200">
                 <h4 className="text-xs font-mono uppercase tracking-wider text-umber-muted mb-2.5 font-bold">
-                  Maker Region
+                  Craft Region
                 </h4>
                 <div className="space-y-1.5">
                   {locations.map((loc) => {

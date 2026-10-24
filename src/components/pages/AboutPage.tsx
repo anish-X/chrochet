@@ -42,7 +42,7 @@ export const AboutPage: React.FC = () => {
 
               <div className="pt-2 flex items-center space-x-3 text-xs font-mono text-terracotta-700">
                 <span className="w-2 h-2 rounded-full bg-terracotta-500" />
-                <span>Zero middlemen. 80%+ direct to creators.</span>
+                <span>100% handmade in Nepal. Organic natural fibers.</span>
               </div>
             </div>
 
