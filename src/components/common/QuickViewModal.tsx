@@ -105,11 +105,11 @@ export const QuickViewModal: React.FC = () => {
                 )}
 
                 <div className="flex items-baseline space-x-2 mt-3">
-                  <span className="font-mono text-xl font-bold text-terracotta-700">
+                  <span className="font-mono text-xl font-bold text-espresso">
                     NPR {product.price.toLocaleString()}
                   </span>
                   {product.originalPrice && (
-                    <span className="font-mono text-xs text-stone-400 line-through">
+                    <span className="font-mono text-xs text-umber-subtle line-through">
                       NPR {product.originalPrice.toLocaleString()}
                     </span>
                   )}
@@ -119,7 +119,7 @@ export const QuickViewModal: React.FC = () => {
                   <div>
                     <span className="text-[10px] font-mono text-umber-muted uppercase block">Time Spent</span>
                     <span className="font-semibold text-espresso flex items-center mt-0.5">
-                      <Clock className="w-3.5 h-3.5 mr-1 text-terracotta-500" />
+                      <Clock className="w-3.5 h-3.5 mr-1 text-sage-600" />
                       {product.hoursToMake} hours
                     </span>
                   </div>
@@ -140,7 +140,7 @@ export const QuickViewModal: React.FC = () => {
               <div className="mt-6 pt-4 border-t border-linen-300 space-y-3">
                 <div className="flex items-center space-x-3">
                   {/* Quantity Stepper */}
-                  <div className="flex items-center border border-linen-400 rounded-xl bg-white px-3 py-1.5 text-xs">
+                  <div className="flex items-center border border-linen-300 rounded-xl bg-white px-3 py-1.5 text-xs">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
                       className="font-bold text-umber hover:text-espresso w-5 text-center"
@@ -158,7 +158,7 @@ export const QuickViewModal: React.FC = () => {
 
                   <button
                     onClick={handleAddToCart}
-                    className="btn-tactile flex-1 py-2.5 px-4 bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs font-semibold rounded-xl shadow-craft-sm flex items-center justify-center space-x-2 transition-colors"
+                    className="btn-tactile flex-1 py-2.5 px-4 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-xl shadow-craft-sm flex items-center justify-center space-x-2 transition-colors"
                   >
                     <ShoppingBag className="w-4 h-4" />
                     <span>Add to Bag</span>
@@ -166,7 +166,7 @@ export const QuickViewModal: React.FC = () => {
 
                   <button
                     onClick={() => toggleWishlist(product.id)}
-                    className={`p-2.5 rounded-xl border border-linen-400 transition-colors ${
+                    className={`p-2.5 rounded-xl border border-linen-300 transition-colors ${
                       isFavorited ? 'bg-terracotta-500 text-white border-terracotta-500' : 'bg-white text-espresso hover:text-terracotta-600'
                     }`}
                   >

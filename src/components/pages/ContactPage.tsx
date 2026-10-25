@@ -27,7 +27,7 @@ export const ContactPage: React.FC = () => {
     e.preventDefault();
     if (!formData.name || !formData.message) return;
     setSubmitted(true);
-    showToast('Message Sent', 'We will respond within 4 business hours via WhatsApp or email.', 'terracotta');
+    showToast('Message Sent', 'We will respond within 4 business hours via WhatsApp or email.', 'info');
   };
 
   return (
@@ -36,7 +36,7 @@ export const ContactPage: React.FC = () => {
         
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             Get In Touch
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-espresso tracking-tight mt-1">
@@ -55,14 +55,14 @@ export const ContactPage: React.FC = () => {
             {/* Studio Card */}
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-linen-300 shadow-craft-sm space-y-5">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-xl bg-terracotta-50 text-terracotta-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="font-serif text-lg font-bold text-espresso">
                     Sefung Crochet Studio & Quality Lab
                   </h3>
-                  <span className="text-xs font-mono text-terracotta-600">
+                  <span className="text-xs font-mono text-sage-700">
                     Jhamsikhel, Lalitpur, Nepal
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export const ContactPage: React.FC = () => {
                   <span>namaste@sefungcrochet.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-espresso">
-                  <Clock className="w-4 h-4 text-terracotta-600" />
+                  <Clock className="w-4 h-4 text-sage-600" />
                   <span>Sun – Fri: 10:00 AM – 6:30 PM (Sat Closed)</span>
                 </div>
               </div>
@@ -93,9 +93,9 @@ export const ContactPage: React.FC = () => {
                   href="https://wa.me/9779801234567"
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-tactile w-full py-3 bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold rounded-xl flex items-center justify-center space-x-2 shadow-craft-sm transition-colors"
+                  className="btn-tactile w-full py-3 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-xl flex items-center justify-center space-x-2 shadow-craft-sm transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-300" />
+                  <MessageCircle className="w-4 h-4 text-sage-100" />
                   <span>Chat with Studio Concierge on WhatsApp</span>
                 </a>
               </div>
@@ -103,7 +103,7 @@ export const ContactPage: React.FC = () => {
 
             {/* Quick Dispatch Card */}
             <div className="bg-linen-100 p-6 rounded-3xl border border-linen-300 text-xs text-umber space-y-2">
-              <span className="font-mono text-terracotta-600 font-bold uppercase text-[10px] block">
+              <span className="font-mono text-sage-700 font-bold uppercase text-[10px] block">
                 Logistics & Pickups
               </span>
               <h4 className="font-serif font-bold text-espresso text-sm">
@@ -123,7 +123,7 @@ export const ContactPage: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-sage-100 text-sage-600 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-bold">
+                <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-bold">
                   Message Dispatched
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-espresso">
@@ -147,7 +147,7 @@ export const ContactPage: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-bold">
+                  <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-bold">
                     Direct Inquiry
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-espresso mt-1">
@@ -164,7 +164,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Sambridhi Rana"
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
 
@@ -176,7 +176,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="98XXXXXXXX"
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
                 </div>
@@ -189,7 +189,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="sambridhi@example.com"
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
 
@@ -198,7 +198,7 @@ export const ContactPage: React.FC = () => {
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     >
                       <option value="Customer Question">Product Sizing / Fit Inquiry</option>
                       <option value="Custom Order">Bespoke Custom Dimension Order</option>
@@ -216,13 +216,13 @@ export const ContactPage: React.FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us what piece you are interested in or questions about delivery..."
-                    className="w-full p-3.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                    className="w-full p-3.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-tactile w-full py-3.5 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2"
+                  className="btn-tactile w-full py-3.5 bg-sage-600 hover:bg-sage-700 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2"
                 >
                   <Send className="w-4 h-4" />
                   <span>Send Message to Jhamsikhel Studio</span>

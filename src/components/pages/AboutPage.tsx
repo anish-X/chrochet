@@ -11,7 +11,7 @@ export const AboutPage: React.FC = () => {
         
         {/* Editorial Story Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             The Sefung Crochet Manifesto
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-espresso tracking-tight leading-tight">
@@ -40,8 +40,8 @@ export const AboutPage: React.FC = () => {
                 Our crochet creators work in this timeless spirit. Tucked inside living rooms and sunlit verandas across Bhaktapur, Patan, and Pokhara, each artisan loops thousands of tiny slip-stitches and treble knots. Sefung Crochet is their shared home — a place where their labor is given dignity, fair economic reward, and a worldwide audience.
               </p>
 
-              <div className="pt-2 flex items-center space-x-3 text-xs font-mono text-terracotta-700">
-                <span className="w-2 h-2 rounded-full bg-terracotta-500" />
+              <div className="pt-2 flex items-center space-x-3 text-xs font-mono text-sage-700">
+                <span className="w-2 h-2 rounded-full bg-sage-600" />
                 <span>100% handmade in Nepal. Organic natural fibers.</span>
               </div>
             </div>
@@ -68,10 +68,10 @@ export const AboutPage: React.FC = () => {
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white tracking-tight">
               The only craft machines cannot touch.
             </h2>
-            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm text-espresso-subtle leading-relaxed font-light">
               Most consumers don't realize this: when fast-fashion stores sell "crochet" sweaters, they are either exploiting undocumented workers or selling faux-crochet machine warp-knits.
             </p>
-            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm text-espresso-subtle leading-relaxed font-light">
               Because true crochet requires looping yarn around a hook and pulling it through an active stitch in three spatial dimensions, mechanical factory looms physically cannot replicate it. When you purchase a crochet cardigan, tote bag, or amigurumi toy from Sefung Crochet, you hold an undeniable human achievement.
             </p>
           </div>
@@ -79,15 +79,15 @@ export const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 pt-10 border-t border-espresso-soft text-xs font-mono">
             <div className="space-y-1">
               <span className="text-honey-400 block font-bold">Industrial Knitting:</span>
-              <p className="text-stone-400 text-[11px]">Automated by multi-needle computer beds in seconds.</p>
+              <p className="text-espresso-muted text-[11px]">Automated by multi-needle computer beds in seconds.</p>
             </div>
             <div className="space-y-1">
               <span className="text-terracotta-400 block font-bold">True Crochet:</span>
-              <p className="text-stone-300 text-[11px]">Requires 100% human hand-eye coordination for every single knot.</p>
+              <p className="text-espresso-subtle text-[11px]">Requires 100% human hand-eye coordination for every single knot.</p>
             </div>
             <div className="space-y-1">
               <span className="text-sage-300 block font-bold">The Sefung Guarantee:</span>
-              <p className="text-stone-400 text-[11px]">Zero industrial automation. Every loop signed by the artisan.</p>
+              <p className="text-espresso-muted text-[11px]">Zero industrial automation. Every loop signed by the artisan.</p>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ export const AboutPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
             <button
               onClick={() => navigateTo('shop')}
-              className="btn-tactile px-6 py-3 bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs font-semibold rounded-xl shadow-craft-sm"
+              className="btn-tactile px-6 py-3 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-xl shadow-craft-sm transition-colors"
             >
               Explore Our Collection
             </button>

@@ -6,13 +6,13 @@ export const CreatorInvitation: React.FC = () => {
   const { navigateTo } = useShop();
 
   return (
-    <section className="py-16 sm:py-24 bg-terracotta-50/60 border-b border-terracotta-200">
+    <section className="py-16 sm:py-24 bg-brand-pink/20 border-b border-linen-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="bg-white rounded-3xl border-2 border-dashed border-terracotta-300 p-8 sm:p-14 shadow-craft-md relative overflow-hidden">
+        <div className="bg-white rounded-3xl border-2 border-dashed border-linen-300 p-8 sm:p-14 shadow-craft-md relative overflow-hidden">
           
           {/* Background subtle watermark icon */}
-          <div className="absolute -bottom-10 -right-10 text-terracotta-100 pointer-events-none opacity-40">
+          <div className="absolute -bottom-10 -right-10 text-brand-pink/40 pointer-events-none opacity-40">
             <svg className="w-80 h-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
               <circle cx="12" cy="12" r="10" strokeDasharray="4 2" />
               <path d="M12 2a10 10 0 0 1 10 10" />
@@ -23,14 +23,14 @@ export const CreatorInvitation: React.FC = () => {
             
             <div className="lg:col-span-8 space-y-6">
               
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-terracotta-100 text-terracotta-800 text-xs font-mono font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-terracotta-600" />
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-linen-200 text-espresso text-xs font-mono font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-sage-600" />
                 <span>FOR NEPALI CROCHET CREATORS</span>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-espresso tracking-tight leading-tight">
                 Hook what you love. <br />
-                <span className="text-terracotta-600">
+                <span className="text-sage-700">
                   We handle the photography, packaging & delivery.
                 </span>
               </h2>
@@ -42,7 +42,7 @@ export const CreatorInvitation: React.FC = () => {
               {/* 3 Steps Mini-Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono text-xs">
                 <div className="p-3.5 rounded-xl bg-parchment border border-linen-300">
-                  <div className="w-7 h-7 rounded-full bg-terracotta-100 text-terracotta-700 flex items-center justify-center font-bold text-xs mb-2">
+                  <div className="w-7 h-7 rounded-full bg-linen-200 text-espresso flex items-center justify-center font-bold text-xs mb-2">
                     1
                   </div>
                   <h4 className="font-bold text-espresso">Apply with Photos</h4>
@@ -70,7 +70,7 @@ export const CreatorInvitation: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
                 <button
                   onClick={() => navigateTo('sell')}
-                  className="btn-tactile px-7 py-3.5 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2"
+                  className="btn-tactile px-7 py-3.5 bg-sage-600 hover:bg-sage-700 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>Submit Creator Application</span>
@@ -89,7 +89,7 @@ export const CreatorInvitation: React.FC = () => {
 
             {/* Right Quote card */}
             <div className="lg:col-span-4 bg-linen-100/90 p-6 rounded-2xl border border-linen-300 shadow-craft-sm space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-terracotta-600 font-bold block">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-sage-700 font-bold block">
                 Artisan Story
               </span>
 
@@ -98,11 +98,13 @@ export const CreatorInvitation: React.FC = () => {
               </p>
 
               <div className="pt-3 border-t border-linen-300 flex items-center space-x-3">
-                <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"
-                  alt="Sunita Prajapati"
-                  className="w-10 h-10 rounded-full object-cover border border-linen-400"
-                />
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-terracotta-300 bg-terracotta-200 flex-shrink-0">
+                  <img
+                    src="/images/logo.png"
+                    alt="Sefung Crochet Artisan"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div>
                   <h5 className="text-xs font-bold text-espresso">Sunita Prajapati</h5>
                   <span className="text-[11px] font-mono text-umber-muted">Bhaktapur Artisan • Joined Jan 2024</span>

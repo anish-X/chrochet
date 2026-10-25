@@ -54,7 +54,7 @@ export const SellWithUsPage: React.FC = () => {
       return;
     }
     setFormSubmitted(true);
-    showToast('Application Submitted!', 'Our artisan curator will contact you via WhatsApp within 48 hours.', 'terracotta');
+    showToast('Application Submitted!', 'Our artisan curator will contact you via WhatsApp within 48 hours.', 'info');
   };
 
   return (
@@ -212,7 +212,7 @@ export const SellWithUsPage: React.FC = () => {
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       placeholder="e.g. Maya Shrestha"
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
 
@@ -226,7 +226,7 @@ export const SellWithUsPage: React.FC = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="98XXXXXXXX"
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
                 </div>
@@ -241,7 +241,7 @@ export const SellWithUsPage: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="maya@example.com"
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
 
@@ -252,7 +252,7 @@ export const SellWithUsPage: React.FC = () => {
                     <select
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     >
                       <option value="Kathmandu">Kathmandu</option>
                       <option value="Lalitpur">Lalitpur / Patan</option>
@@ -281,12 +281,12 @@ export const SellWithUsPage: React.FC = () => {
                           onClick={() => toggleSpecialty(spec)}
                           className={`p-2.5 rounded-xl text-xs text-left border transition-all flex items-center justify-between ${
                             isSelected
-                              ? 'bg-terracotta-50 border-terracotta-500 text-terracotta-800 font-semibold'
+                              ? 'bg-sage-50 border-sage-600 text-sage-800 font-semibold'
                               : 'bg-linen-100 border-linen-300 text-espresso hover:bg-linen-200'
                           }`}
                         >
                           <span>{spec}</span>
-                          {isSelected && <CheckCircle2 className="w-3.5 h-3.5 text-terracotta-600" />}
+                          {isSelected && <CheckCircle2 className="w-3.5 h-3.5 text-sage-600" />}
                         </button>
                       );
                     })}
@@ -301,7 +301,7 @@ export const SellWithUsPage: React.FC = () => {
                     <select
                       value={formData.experienceYears}
                       onChange={(e) => setFormData({ ...formData, experienceYears: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     >
                       <option value="Under 1 year">Under 1 year</option>
                       <option value="1-3 years">1 to 3 years</option>
@@ -319,7 +319,7 @@ export const SellWithUsPage: React.FC = () => {
                       value={formData.instagram}
                       onChange={(e) => setFormData({ ...formData, instagram: e.target.value })}
                       placeholder="@yourcrochetpage"
-                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3.5 py-2.5 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
                 </div>
@@ -334,13 +334,13 @@ export const SellWithUsPage: React.FC = () => {
                     value={formData.story}
                     onChange={(e) => setFormData({ ...formData, story: e.target.value })}
                     placeholder="e.g. I learned from my mother in Patan, love working with unbleached organic cotton for oversized totes..."
-                    className="w-full p-3 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                    className="w-full p-3 text-xs bg-linen-100 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                   />
                 </div>
 
                 {/* Photo upload mock */}
-                <div className="p-4 border-2 border-dashed border-linen-400 rounded-2xl bg-linen-50 text-center space-y-2">
-                  <UploadCloud className="w-6 h-6 text-terracotta-500 mx-auto" />
+                <div className="p-4 border-2 border-dashed border-linen-300 rounded-2xl bg-linen-100/60 text-center space-y-2">
+                  <UploadCloud className="w-6 h-6 text-sage-600 mx-auto" />
                   <p className="text-xs text-espresso font-medium">
                     Upload photos of 2-3 sample pieces
                   </p>
@@ -355,7 +355,7 @@ export const SellWithUsPage: React.FC = () => {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full py-4 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-all flex items-center justify-center space-x-2"
+                  className="w-full py-4 bg-sage-600 hover:bg-sage-700 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-all flex items-center justify-center space-x-2"
                 >
                   <Sparkles className="w-4 h-4" />
                   <span>Submit Application to Sefung Crochet Studio</span>

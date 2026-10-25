@@ -13,7 +13,7 @@ export const CommunityVoices: React.FC = () => {
         
         {/* Header */}
         <div className="max-w-2xl mb-12">
-          <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             Social Proof
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-espresso tracking-tight mt-1">
@@ -70,7 +70,7 @@ export const CommunityVoices: React.FC = () => {
                   {product && (
                     <button
                       onClick={() => navigateTo('product', product.id)}
-                      className="mt-3 text-[11px] font-mono text-terracotta-600 hover:text-terracotta-800 flex items-center space-x-1 truncate"
+                      className="mt-3 text-[11px] font-mono text-sage-700 hover:text-sage-800 flex items-center space-x-1 truncate"
                     >
                       <span className="text-umber-muted">Item:</span>
                       <span className="font-semibold truncate">{product.title}</span>

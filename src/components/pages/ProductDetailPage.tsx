@@ -73,15 +73,15 @@ export const ProductDetailPage: React.FC = () => {
           <button onClick={() => navigateTo('home')} className="hover:text-espresso transition-colors">
             Home
           </button>
-          <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
+          <ChevronRight className="w-3.5 h-3.5 text-umber-subtle" />
           <button onClick={() => navigateTo('shop')} className="hover:text-espresso transition-colors">
             Catalog
           </button>
-          <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
+          <ChevronRight className="w-3.5 h-3.5 text-umber-subtle" />
           <button onClick={() => navigateTo('shop', undefined, product.category)} className="hover:text-espresso transition-colors capitalize">
             {product.category}
           </button>
-          <ChevronRight className="w-3.5 h-3.5 text-stone-400" />
+          <ChevronRight className="w-3.5 h-3.5 text-umber-subtle" />
           <span className="text-espresso font-semibold truncate max-w-[200px]">
             {product.title}
           </span>
@@ -173,7 +173,7 @@ export const ProductDetailPage: React.FC = () => {
                 NPR {product.price.toLocaleString()}
               </span>
               {product.originalPrice && (
-                <span className="font-mono text-sm text-stone-400 line-through">
+                <span className="font-mono text-sm text-umber-subtle line-through">
                   NPR {product.originalPrice.toLocaleString()}
                 </span>
               )}
@@ -187,7 +187,7 @@ export const ProductDetailPage: React.FC = () => {
               <div className="p-3 bg-white rounded-xl border border-linen-300 space-y-1">
                 <span className="text-[10px] font-mono text-umber-muted uppercase block">Hand-Hooking Time</span>
                 <div className="flex items-center space-x-1.5 font-bold text-espresso">
-                  <Clock className="w-4 h-4 text-terracotta-500" />
+                  <Clock className="w-4 h-4 text-sage-600" />
                   <span>{product.hoursToMake} hours of dedicated hooking</span>
                 </div>
               </div>
@@ -234,7 +234,7 @@ export const ProductDetailPage: React.FC = () => {
 
               <button
                 onClick={() => setCustomInquiryOpen(true)}
-                className="text-xs font-mono text-terracotta-600 hover:text-terracotta-800 font-semibold underline underline-offset-2"
+                className="text-xs font-mono text-sage-700 hover:text-sage-800 font-semibold underline underline-offset-2"
               >
                 Request Custom
               </button>
@@ -244,7 +244,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="pt-4 border-t border-linen-300 space-y-4">
               <div className="flex items-center space-x-3">
                 {/* Quantity */}
-                <div className="flex items-center border border-linen-400 rounded-xl bg-white px-3 py-2 text-xs">
+                <div className="flex items-center border border-linen-300 rounded-xl bg-white px-3 py-2 text-xs">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     className="font-bold text-umber hover:text-espresso w-6 text-center"
@@ -263,7 +263,7 @@ export const ProductDetailPage: React.FC = () => {
                 {/* Add to Bag */}
                 <button
                   onClick={() => addToCart(product, quantity)}
-                  className="btn-tactile flex-1 py-3.5 px-6 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-craft-md flex items-center justify-center space-x-2 transition-all"
+                  className="btn-tactile flex-1 py-3.5 px-6 bg-sage-600 hover:bg-sage-700 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-craft-md flex items-center justify-center space-x-2 transition-all"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   <span>Add {quantity > 1 ? `${quantity} Items` : 'to Bag'}</span>
@@ -296,7 +296,7 @@ export const ProductDetailPage: React.FC = () => {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`pb-3 font-mono transition-colors whitespace-nowrap border-b-2 ${
                   activeTab === tab.id
-                    ? 'border-terracotta-500 text-terracotta-700 font-bold'
+                    ? 'border-sage-600 text-sage-800 font-bold'
                     : 'border-transparent text-umber-muted hover:text-espresso'
                 }`}
               >
@@ -373,7 +373,7 @@ export const ProductDetailPage: React.FC = () => {
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+              <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
                 Customer Feedback
               </span>
               <h3 className="font-serif text-2xl font-bold text-espresso mt-1">
@@ -416,7 +416,7 @@ export const ProductDetailPage: React.FC = () => {
         {relatedProducts.length > 0 && (
           <div>
             <div className="mb-8">
-              <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+              <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
                 More Handcrafted Creations
               </span>
               <h3 className="font-serif text-2xl font-bold text-espresso mt-1">
@@ -451,12 +451,12 @@ export const ProductDetailPage: React.FC = () => {
                 value={inquiryText}
                 onChange={(e) => setInquiryText(e.target.value)}
                 placeholder="Describe your desired measurements or color palette..."
-                className="w-full p-3 text-xs bg-white border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+                className="w-full p-3 text-xs bg-white border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
               />
               <div className="flex space-x-2">
                 <button
                   type="submit"
-                  className="flex-1 py-2.5 bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs font-semibold rounded-xl"
+                  className="flex-1 py-2.5 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-xl transition-colors"
                 >
                   Send Inquiry
                 </button>

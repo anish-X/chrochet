@@ -30,7 +30,7 @@ export const FAQPage: React.FC = () => {
         
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
-          <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             Common Inquiries
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-espresso tracking-tight">
@@ -51,7 +51,7 @@ export const FAQPage: React.FC = () => {
               }}
               className={`px-6 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                 activeCategory === 'shoppers'
-                  ? 'bg-white text-espresso shadow-craft-sm'
+                  ? 'bg-sage-600 text-white shadow-craft-sm'
                   : 'text-umber hover:text-espresso'
               }`}
             >
@@ -64,7 +64,7 @@ export const FAQPage: React.FC = () => {
               }}
               className={`px-6 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                 activeCategory === 'creators'
-                  ? 'bg-white text-espresso shadow-craft-sm'
+                  ? 'bg-sage-600 text-white shadow-craft-sm'
                   : 'text-umber hover:text-espresso'
               }`}
             >
@@ -81,7 +81,7 @@ export const FAQPage: React.FC = () => {
             value={faqSearch}
             onChange={(e) => setFaqSearch(e.target.value)}
             placeholder="Search questions (e.g. delivery, eSewa, returns)..."
-            className="w-full pl-9 pr-4 py-2.5 text-xs bg-white border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500 shadow-craft-sm"
+            className="w-full pl-9 pr-4 py-2.5 text-xs bg-white border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600 shadow-craft-sm text-espresso placeholder-umber-subtle"
           />
         </div>
 
@@ -101,7 +101,7 @@ export const FAQPage: React.FC = () => {
                   <span className="font-serif text-sm sm:text-base font-bold text-espresso leading-snug">
                     {item.question}
                   </span>
-                  <div className={`w-8 h-8 rounded-full bg-linen-100 flex items-center justify-center text-umber flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 bg-terracotta-50 text-terracotta-600' : ''}`}>
+                  <div className={`w-8 h-8 rounded-full bg-linen-100 flex items-center justify-center text-umber flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 bg-sage-50 text-sage-700' : ''}`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
@@ -118,7 +118,7 @@ export const FAQPage: React.FC = () => {
 
         {/* Bottom Contact Help */}
         <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-linen-200/70 border border-linen-300 text-center space-y-4">
-          <div className="w-12 h-12 rounded-full bg-white text-terracotta-600 flex items-center justify-center mx-auto shadow-craft-sm">
+          <div className="w-12 h-12 rounded-full bg-white text-sage-600 flex items-center justify-center mx-auto shadow-craft-sm">
             <MessageCircle className="w-6 h-6" />
           </div>
           <h3 className="font-serif text-xl font-bold text-espresso">
@@ -130,7 +130,7 @@ export const FAQPage: React.FC = () => {
           <div className="pt-2 flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-3">
             <button
               onClick={() => navigateTo('contact')}
-              className="px-6 py-2.5 bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs font-semibold rounded-xl shadow-craft-sm"
+              className="px-6 py-2.5 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-xl shadow-craft-sm transition-colors"
             >
               Contact Studio Concierge
             </button>

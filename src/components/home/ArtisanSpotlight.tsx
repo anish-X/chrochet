@@ -18,7 +18,7 @@ export const ArtisanSpotlight: React.FC = () => {
         
         {/* Header */}
         <div className="max-w-2xl mb-12">
-          <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             Maker Provenance
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-espresso tracking-tight mt-1">
@@ -39,7 +39,7 @@ export const ArtisanSpotlight: React.FC = () => {
                 onClick={() => setSelectedArtisanId(artisan.id)}
                 className={`btn-tactile flex items-center space-x-3 p-2 pr-4 rounded-full border transition-all ${
                   isSelected
-                    ? 'bg-white border-terracotta-500 shadow-craft-sm ring-1 ring-terracotta-500'
+                    ? 'bg-white border-sage-600 shadow-craft-sm ring-1 ring-sage-600'
                     : 'bg-linen-200/70 border-linen-300 hover:bg-white text-espresso'
                 }`}
               >
@@ -76,7 +76,7 @@ export const ArtisanSpotlight: React.FC = () => {
                 
                 <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm p-4 rounded-xl border border-linen-300 shadow-sm">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-mono text-terracotta-600 font-semibold flex items-center">
+                    <span className="font-mono text-sage-700 font-semibold flex items-center">
                       <MapPin className="w-3.5 h-3.5 mr-1" />
                       {currentArtisan.location}
                     </span>
@@ -110,7 +110,7 @@ export const ArtisanSpotlight: React.FC = () => {
               </div>
 
               {/* Quote block */}
-              <blockquote className="p-4 sm:p-5 rounded-2xl bg-linen-100/80 border-l-4 border-terracotta-500 text-espresso text-sm sm:text-base italic leading-relaxed font-serif">
+              <blockquote className="p-4 sm:p-5 rounded-2xl bg-linen-100/80 border-l-4 border-sage-600 text-espresso text-sm sm:text-base italic leading-relaxed font-serif">
                 "{currentArtisan.quote}"
               </blockquote>
 
@@ -125,7 +125,7 @@ export const ArtisanSpotlight: React.FC = () => {
                 </div>
                 <div className="p-3 rounded-xl bg-parchment border border-linen-300">
                   <span className="text-[10px] text-umber-muted uppercase block">Rating</span>
-                  <span className="font-bold text-terracotta-600 text-sm">★ {currentArtisan.rating} / 5.0</span>
+                  <span className="font-bold text-honey-500 text-sm">★ {currentArtisan.rating} / 5.0</span>
                 </div>
                 <div className="p-3 rounded-xl bg-parchment border border-linen-300 col-span-2 sm:col-span-1">
                   <span className="text-[10px] text-umber-muted uppercase block">Commission Status</span>
@@ -145,7 +145,7 @@ export const ArtisanSpotlight: React.FC = () => {
             </h4>
             <button
               onClick={() => navigateTo('shop')}
-              className="text-xs font-mono text-terracotta-600 hover:text-terracotta-800 flex items-center space-x-1 font-semibold"
+              className="text-xs font-mono text-sage-700 hover:text-sage-800 flex items-center space-x-1 font-semibold"
             >
               <span>View All</span>
               <ArrowRight className="w-3.5 h-3.5" />

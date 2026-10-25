@@ -167,7 +167,7 @@ export const CartDrawer: React.FC = () => {
                               </h4>
                               <button
                                 onClick={() => removeFromCart(item.product.id)}
-                                className="text-stone-400 hover:text-terracotta-600 transition-colors p-1"
+                                className="text-umber-subtle hover:text-terracotta-600 transition-colors p-1"
                                 title="Remove"
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
@@ -179,7 +179,7 @@ export const CartDrawer: React.FC = () => {
                           </div>
 
                           <div className="flex items-center justify-between mt-2 pt-2 border-t border-linen-200">
-                            <span className="text-xs font-mono font-bold text-terracotta-700">
+                            <span className="text-xs font-mono font-bold text-espresso">
                               NPR {(item.product.price * item.quantity).toLocaleString()}
                             </span>
 
@@ -233,7 +233,7 @@ export const CartDrawer: React.FC = () => {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
 
@@ -244,7 +244,7 @@ export const CartDrawer: React.FC = () => {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
 
@@ -253,7 +253,7 @@ export const CartDrawer: React.FC = () => {
                     <select
                       value={formData.district}
                       onChange={(e) => setFormData({ ...formData, district: e.target.value })}
-                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     >
                       <option value="Kathmandu Valley">Kathmandu Valley (Kathmandu, Lalitpur, Bhaktapur)</option>
                       <option value="Pokhara">Pokhara / Kaski</option>
@@ -273,14 +273,14 @@ export const CartDrawer: React.FC = () => {
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                       placeholder="Tole, house number, nearby landmark"
-                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3 py-2 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-medium text-espresso mb-1">Payment Method</label>
                     <div className="grid grid-cols-2 gap-2 text-xs">
-                      <label className={`p-2.5 border rounded-lg cursor-pointer flex items-center space-x-2 ${formData.paymentMethod === 'cod' ? 'border-terracotta-500 bg-terracotta-50 font-semibold text-terracotta-800' : 'border-linen-300 bg-white text-espresso'}`}>
+                      <label className={`p-2.5 border rounded-lg cursor-pointer flex items-center space-x-2 ${formData.paymentMethod === 'cod' ? 'border-sage-600 bg-sage-50 font-semibold text-sage-800' : 'border-linen-300 bg-white text-espresso'}`}>
                         <input
                           type="radio"
                           name="payment"
@@ -290,7 +290,7 @@ export const CartDrawer: React.FC = () => {
                         />
                         <span>Cash On Delivery</span>
                       </label>
-                      <label className={`p-2.5 border rounded-lg cursor-pointer flex items-center space-x-2 ${formData.paymentMethod === 'esewa' ? 'border-terracotta-500 bg-terracotta-50 font-semibold text-terracotta-800' : 'border-linen-300 bg-white text-espresso'}`}>
+                      <label className={`p-2.5 border rounded-lg cursor-pointer flex items-center space-x-2 ${formData.paymentMethod === 'esewa' ? 'border-sage-600 bg-sage-50 font-semibold text-sage-800' : 'border-linen-300 bg-white text-espresso'}`}>
                         <input
                           type="radio"
                           name="payment"
@@ -309,7 +309,7 @@ export const CartDrawer: React.FC = () => {
                       rows={2}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      className="w-full px-3 py-1.5 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-terracotta-500"
+                      className="w-full px-3 py-1.5 text-xs bg-white border border-linen-300 rounded-lg focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600"
                     />
                   </div>
                 </div>
@@ -317,7 +317,7 @@ export const CartDrawer: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2"
+                    className="w-full py-3 bg-sage-600 hover:bg-sage-700 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2"
                   >
                     <ShieldCheck className="w-4 h-4" />
                     <span>Confirm Order (NPR {total.toLocaleString()})</span>
@@ -340,7 +340,7 @@ export const CartDrawer: React.FC = () => {
                   <CheckCircle className="w-10 h-10" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-terracotta-600 font-bold">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-sage-700 font-bold">
                     Order Placed With Love
                   </span>
                   <h4 className="font-serif text-2xl font-bold text-espresso mt-1">
@@ -381,7 +381,7 @@ export const CartDrawer: React.FC = () => {
                       handleClose();
                       navigateTo('sell');
                     }}
-                    className="w-full py-2 text-xs text-terracotta-600 hover:text-terracotta-700 font-medium"
+                    className="w-full py-2 text-xs text-sage-700 hover:text-sage-800 font-medium"
                   >
                     Are you a creator? Sell with us
                   </button>
@@ -410,13 +410,13 @@ export const CartDrawer: React.FC = () => {
                 </div>
                 <div className="flex justify-between text-sm font-bold text-espresso pt-2 border-t border-linen-200">
                   <span>Total</span>
-                  <span className="font-mono text-terracotta-700">NPR {total.toLocaleString()}</span>
+                  <span className="font-mono text-espresso font-bold">NPR {total.toLocaleString()}</span>
                 </div>
               </div>
 
               <button
                 onClick={() => setCheckoutStep('checkout')}
-                className="w-full py-3 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2 group"
+                className="w-full py-3 bg-sage-600 hover:bg-sage-700 text-white font-semibold text-xs rounded-xl shadow-craft-md transition-colors flex items-center justify-center space-x-2 group"
               >
                 <span>Proceed to Handcrafted Checkout</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -104,7 +104,7 @@ export const ShopPage: React.FC = () => {
         {/* Page Banner Header */}
         <div className="mb-10 pb-8 border-b border-linen-300">
           <div className="max-w-3xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+            <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
               Curated Catalog
             </span>
             <h1 className="font-serif text-3xl sm:text-5xl font-bold text-espresso tracking-tight mt-1">
@@ -127,7 +127,7 @@ export const ShopPage: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Filter by title, yarn, or maker..."
-              className="w-full pl-9 pr-8 py-2 text-xs bg-linen-100/70 border border-linen-300 rounded-xl focus:outline-none focus:border-terracotta-500"
+              className="w-full pl-9 pr-8 py-2 text-xs bg-linen-100/70 border border-linen-300 rounded-xl focus:outline-none focus:border-sage-600 focus:ring-1 focus:ring-sage-600 text-espresso placeholder-umber-subtle"
             />
             {searchQuery && (
               <button 
@@ -148,7 +148,7 @@ export const ShopPage: React.FC = () => {
               <SlidersHorizontal className="w-4 h-4" />
               <span>Filters</span>
               {hasActiveFilters && (
-                <span className="w-2 h-2 rounded-full bg-terracotta-500" />
+                <span className="w-2 h-2 rounded-full bg-sage-600" />
               )}
             </button>
 
@@ -158,7 +158,7 @@ export const ShopPage: React.FC = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="px-3 py-2 bg-linen-100 border border-linen-300 rounded-xl text-xs text-espresso font-medium focus:outline-none focus:border-terracotta-500"
+                className="px-3 py-2 bg-linen-100 border border-linen-300 rounded-xl text-xs text-espresso font-medium focus:outline-none focus:border-sage-600"
               >
                 <option value="featured">Featured Curations</option>
                 <option value="newest">Newest Drops</option>
@@ -179,13 +179,13 @@ export const ShopPage: React.FC = () => {
               
               <div className="flex items-center justify-between pb-3 border-b border-linen-200">
                 <span className="font-serif text-sm font-bold text-espresso flex items-center space-x-1.5">
-                  <Filter className="w-4 h-4 text-terracotta-500" />
+                  <Filter className="w-4 h-4 text-sage-600" />
                   <span>Refine Catalog</span>
                 </span>
                 {hasActiveFilters && (
                   <button
                     onClick={resetFilters}
-                    className="text-[11px] font-mono text-terracotta-600 hover:text-terracotta-800 flex items-center space-x-1"
+                    className="text-[11px] font-mono text-sage-700 hover:text-sage-800 flex items-center space-x-1"
                   >
                     <RefreshCcw className="w-3 h-3" />
                     <span>Reset</span>
@@ -207,12 +207,12 @@ export const ShopPage: React.FC = () => {
                         onClick={() => setSelectedCategory(cat.id)}
                         className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center justify-between ${
                           isSelected
-                            ? 'bg-terracotta-50 text-terracotta-700 font-semibold'
+                            ? 'bg-sage-50 text-sage-800 font-semibold'
                             : 'text-espresso/80 hover:bg-linen-100 hover:text-espresso'
                         }`}
                       >
                         <span>{cat.label}</span>
-                        {isSelected && <Check className="w-3.5 h-3.5 text-terracotta-600" />}
+                        {isSelected && <Check className="w-3.5 h-3.5 text-sage-600" />}
                       </button>
                     );
                   })}
@@ -225,7 +225,7 @@ export const ShopPage: React.FC = () => {
                   <h4 className="text-xs font-mono uppercase tracking-wider text-umber-muted font-bold">
                     Max Price
                   </h4>
-                  <span className="text-xs font-mono font-bold text-terracotta-700">
+                  <span className="text-xs font-mono font-bold text-espresso">
                     NPR {priceRange.toLocaleString()}
                   </span>
                 </div>
@@ -236,7 +236,7 @@ export const ShopPage: React.FC = () => {
                   step={200}
                   value={priceRange}
                   onChange={(e) => setPriceRange(Number(e.target.value))}
-                  className="w-full accent-terracotta-500 cursor-pointer"
+                  className="w-full accent-sage-600 cursor-pointer"
                 />
                 <div className="flex justify-between text-[10px] font-mono text-umber-muted mt-1">
                   <span>NPR 1,000</span>
@@ -255,13 +255,13 @@ export const ShopPage: React.FC = () => {
                     return (
                       <label
                         key={loc}
-                        className="flex items-center space-x-2 text-xs text-espresso cursor-pointer hover:text-terracotta-600"
+                        className="flex items-center space-x-2 text-xs text-espresso cursor-pointer hover:text-sage-700"
                       >
                         <input
                           type="checkbox"
                           checked={isChecked}
                           onChange={() => toggleLocation(loc)}
-                          className="rounded border-linen-400 text-terracotta-500 focus:ring-terracotta-500 accent-terracotta-500"
+                          className="rounded border-linen-400 text-sage-600 focus:ring-sage-600 accent-sage-600"
                         />
                         <span>{loc} District</span>
                       </label>
@@ -277,7 +277,7 @@ export const ShopPage: React.FC = () => {
                     type="checkbox"
                     checked={readyToShipOnly}
                     onChange={(e) => setReadyToShipOnly(e.target.checked)}
-                    className="rounded border-linen-400 text-terracotta-500 focus:ring-terracotta-500 accent-terracotta-500"
+                    className="rounded border-linen-400 text-sage-600 focus:ring-sage-600 accent-sage-600"
                   />
                   <span className="font-medium">Ready to Ship Only</span>
                 </label>
@@ -301,7 +301,7 @@ export const ShopPage: React.FC = () => {
               {hasActiveFilters && (
                 <button
                   onClick={resetFilters}
-                  className="text-terracotta-600 hover:text-terracotta-800 font-mono text-[11px]"
+                  className="text-sage-700 hover:text-sage-800 font-mono text-[11px]"
                 >
                   Clear all filters
                 </button>
@@ -322,7 +322,7 @@ export const ShopPage: React.FC = () => {
                 </p>
                 <button
                   onClick={resetFilters}
-                  className="px-5 py-2.5 bg-terracotta-500 text-white text-xs font-semibold rounded-full shadow-craft-sm hover:bg-terracotta-600 transition-colors"
+                  className="px-5 py-2.5 bg-sage-600 text-white text-xs font-semibold rounded-full shadow-craft-sm hover:bg-sage-700 transition-colors"
                 >
                   Reset All Filters
                 </button>
@@ -369,7 +369,7 @@ export const ShopPage: React.FC = () => {
                       setMobileFiltersOpen(false);
                     }}
                     className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium ${
-                      selectedCategory === cat.id ? 'bg-terracotta-500 text-white' : 'text-espresso'
+                      selectedCategory === cat.id ? 'bg-sage-600 text-white font-semibold' : 'text-espresso'
                     }`}
                   >
                     {cat.label}
@@ -382,7 +382,7 @@ export const ShopPage: React.FC = () => {
             <div className="pt-4 border-t border-linen-300 space-y-2">
               <button
                 onClick={() => setMobileFiltersOpen(false)}
-                className="w-full py-2.5 bg-espresso text-parchment text-xs font-semibold rounded-xl"
+                className="w-full py-2.5 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-xl"
               >
                 Apply Filters ({filteredProducts.length})
               </button>

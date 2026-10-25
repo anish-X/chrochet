@@ -4,12 +4,24 @@
 
 @layer base {
   :root {
-    --color-parchment: #FAF8F5;
-    --color-linen: #F5EFEB;
-    --color-espresso: #1D1714;
-    --color-terracotta: #B35438;
-    --color-sage: #3D5A46;
-    --color-honey: #C98630;
+    --color-primary: #485B48;
+    --color-primary-hover: #384A38;
+    --color-primary-light: #76864A;
+
+    --color-brand-pink: #FFC2C2;
+    --color-brand-terracotta: #CE876E;
+    --color-brand-brown: #8A6A52;
+    --color-brand-dark: #283A44;
+    --color-brand-gold: #EFB254;
+
+    --color-background: #FFF9F7;
+    --color-surface: #FFFFFF;
+    --color-surface-muted: #F9E9E6;
+
+    --color-text-primary: #283A44;
+    --color-text-secondary: #8A6A52;
+
+    --color-border: #F0DAD5;
   }
 
   html {
@@ -17,14 +29,14 @@
   }
 
   body {
-    background-color: #FAF8F5;
-    color: #1D1714;
+    background-color: #FFF9F7;
+    color: #283A44;
     overflow-x: hidden;
   }
 
-  /* Accessible focus indicators */
+  /* Accessible focus indicators with brand forest sage green */
   *:focus-visible {
-    outline: 2px solid #B35438;
+    outline: 2px solid #485B48;
     outline-offset: 3px;
   }
 }
@@ -34,40 +46,40 @@
   .stitch-border {
     border-style: dashed;
     border-width: 1.5px;
-    border-color: #D5C4B1;
+    border-color: #F0DAD5;
   }
 
   .stitch-border-t {
     border-top-style: dashed;
     border-top-width: 1.5px;
-    border-top-color: #D5C4B1;
+    border-top-color: #F0DAD5;
   }
 
   .stitch-border-b {
     border-bottom-style: dashed;
     border-bottom-width: 1.5px;
-    border-bottom-color: #D5C4B1;
+    border-bottom-color: #F0DAD5;
   }
 
   /* Tactile fabric label effect */
   .fabric-tag {
     position: relative;
-    background: #FAF6F2;
-    border: 1px solid #E4D7C9;
-    box-shadow: 0 1px 2px rgba(29, 23, 20, 0.04);
+    background: #F9E9E6;
+    border: 1px solid #F0DAD5;
+    box-shadow: 0 1px 2px rgba(40, 58, 68, 0.04);
   }
 
   /* Tactile card surface */
   .craft-card {
     background-color: #FFFFFF;
-    border: 1px solid #EFE7DF;
+    border: 1px solid #F0DAD5;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   }
 
   .craft-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 30px -6px rgba(29, 23, 20, 0.08), 0 4px 10px -2px rgba(29, 23, 20, 0.03);
-    border-color: #D5C4B1;
+    box-shadow: 0 14px 30px -6px rgba(40, 58, 68, 0.08), 0 4px 10px -2px rgba(40, 58, 68, 0.03);
+    border-color: #76864A;
   }
 
   /* Interactive button micro-press (Emil Kowalski principle) */
@@ -85,14 +97,14 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #FFF9F7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D5C4B1;
+  background: #F0DAD5;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B35438;
+  background: #485B48;
 }
 
 @media (prefers-reduced-motion: reduce) {

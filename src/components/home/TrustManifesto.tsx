@@ -26,7 +26,7 @@ export const TrustManifesto: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             The Sefung Crochet Standard
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-espresso tracking-tight">
@@ -47,7 +47,7 @@ export const TrustManifesto: React.FC = () => {
                 className="bg-white p-6 sm:p-8 rounded-2xl border border-linen-300 shadow-craft-sm hover:shadow-craft-md transition-shadow relative overflow-hidden group"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-linen-200/80 text-terracotta-600 flex items-center justify-center group-hover:bg-terracotta-50 group-hover:text-terracotta-700 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-linen-200/80 text-sage-700 flex items-center justify-center group-hover:bg-sage-50 group-hover:text-sage-800 transition-colors">
                     <Icon className="w-6 h-6" />
                   </div>
                   <span className="font-mono text-[10px] uppercase tracking-wider text-sage-800 bg-sage-50 px-2.5 py-1 rounded-full border border-sage-200 font-medium">
@@ -63,7 +63,7 @@ export const TrustManifesto: React.FC = () => {
                   {pillar.description}
                 </p>
 
-                <div className="mt-4 pt-4 border-t border-linen-200 flex items-center text-[11px] font-mono text-terracotta-600 space-x-1">
+                <div className="mt-4 pt-4 border-t border-linen-200 flex items-center text-[11px] font-mono text-sage-700 space-x-1">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>Verified by Sefung Crochet Quality Protocol</span>
                 </div>
@@ -78,7 +78,7 @@ export const TrustManifesto: React.FC = () => {
             <h4 className="font-serif text-lg font-bold text-white">
               Are you a crochet creator living anywhere in Nepal?
             </h4>
-            <p className="text-xs text-stone-300 max-w-xl">
+            <p className="text-xs text-espresso-subtle max-w-xl">
               We handle the studio photography, customer support, and Pathao/courier logistics so you can focus on making.
             </p>
           </div>

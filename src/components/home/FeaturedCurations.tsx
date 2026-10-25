@@ -30,7 +30,7 @@ export const FeaturedCurations: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
           <div className="space-y-3">
             <div className="flex items-center space-x-2">
-              <span className="font-mono text-xs uppercase tracking-widest text-terracotta-600 font-semibold">
+              <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
                 Featured Drops
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-honey-500" />
@@ -48,7 +48,7 @@ export const FeaturedCurations: React.FC = () => {
 
           <button
             onClick={() => navigateTo('shop', undefined, activeTab)}
-            className="mt-4 md:mt-0 inline-flex items-center space-x-2 text-xs font-semibold font-mono uppercase tracking-wider text-terracotta-600 hover:text-terracotta-800 transition-colors group"
+            className="mt-4 md:mt-0 inline-flex items-center space-x-2 text-xs font-semibold font-mono uppercase tracking-wider text-sage-700 hover:text-sage-800 transition-colors group"
           >
             <span>Explore Entire Catalog</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -65,7 +65,7 @@ export const FeaturedCurations: React.FC = () => {
                 onClick={() => setActiveTab(cat.id)}
                 className={`btn-tactile px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all flex items-center space-x-1.5 ${
                   isActive
-                    ? 'bg-terracotta-500 text-white shadow-craft-sm font-semibold'
+                    ? 'bg-sage-600 text-white shadow-craft-sm font-semibold'
                     : 'bg-linen-200/80 text-espresso hover:bg-linen-300'
                 }`}
               >
@@ -91,7 +91,7 @@ export const FeaturedCurations: React.FC = () => {
         <div className="mt-14 text-center">
           <button
             onClick={() => navigateTo('shop', undefined, 'all')}
-            className="btn-tactile inline-flex items-center space-x-2 px-8 py-3.5 bg-espresso hover:bg-espresso-light text-parchment text-xs font-semibold rounded-full shadow-craft-sm transition-all"
+            className="btn-tactile inline-flex items-center space-x-2 px-8 py-3.5 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-full shadow-craft-sm transition-all"
           >
             <span>Browse All Available Creations</span>
             <ArrowRight className="w-4 h-4" />

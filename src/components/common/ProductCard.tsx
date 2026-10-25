@@ -47,7 +47,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               Ready to Ship
             </span>
           ) : (
-            <span className="px-2.5 py-0.5 text-[9px] font-mono font-medium bg-white/90 text-amber-800 rounded-full backdrop-blur-sm border border-amber-200">
+            <span className="px-2.5 py-0.5 text-[9px] font-mono font-medium bg-white/90 text-honey-600 rounded-full backdrop-blur-sm border border-honey-200">
               Made-to-Order ({product.leadTimeDays}d)
             </span>
           )}
@@ -75,7 +75,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               e.stopPropagation();
               setQuickViewProduct(product);
             }}
-            className="w-8 h-8 rounded-full bg-white/90 text-espresso hover:text-terracotta-600 flex items-center justify-center transition-colors shadow-craft-sm hidden sm:flex"
+            className="w-8 h-8 rounded-full bg-white/90 text-espresso hover:text-sage-700 flex items-center justify-center transition-colors shadow-craft-sm hidden sm:flex"
             aria-label="Quick look"
             title="Quick view"
           >
@@ -93,7 +93,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           <h3 
             onClick={() => navigateTo('product', product.id)}
-            className="font-serif text-sm font-bold text-espresso group-hover:text-terracotta-700 transition-colors line-clamp-2 cursor-pointer leading-snug"
+            className="font-serif text-sm font-bold text-espresso group-hover:text-sage-700 transition-colors line-clamp-2 cursor-pointer leading-snug"
           >
             {product.title}
           </h3>
@@ -103,13 +103,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </p>
         </div>
 
-        <div className="mt-4 pt-3 border-t border-linen-200 flex items-center justify-between">
+        <div className="mt-4 pt-3 border-t border-linen-300 flex items-center justify-between">
           <div>
             <span className="text-sm font-mono font-bold text-espresso block">
               NPR {product.price.toLocaleString()}
             </span>
             {product.originalPrice && (
-              <span className="text-[10px] font-mono text-stone-400 line-through">
+              <span className="text-[10px] font-mono text-umber-subtle line-through">
                 NPR {product.originalPrice.toLocaleString()}
               </span>
             )}
@@ -117,7 +117,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
           <button
             onClick={() => addToCart(product, 1)}
-            className="btn-tactile px-3 py-1.5 bg-linen-200 hover:bg-terracotta-500 hover:text-white text-espresso text-xs font-semibold rounded-lg transition-all flex items-center space-x-1.5 shadow-sm"
+            className="btn-tactile px-3.5 py-1.5 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-lg transition-all flex items-center space-x-1.5 shadow-craft-sm"
             aria-label={`Add ${product.title} to bag`}
           >
             <ShoppingBag className="w-3.5 h-3.5" />
