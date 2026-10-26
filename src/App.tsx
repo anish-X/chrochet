@@ -8,7 +8,6 @@ import { ToastNotification } from "./components/common/ToastNotification";
 import { HomePage } from "./components/pages/HomePage";
 import { ShopPage } from "./components/pages/ShopPage";
 import { ProductDetailPage } from "./components/pages/ProductDetailPage";
-import { SellWithUsPage } from "./components/pages/SellWithUsPage";
 import { AboutPage } from "./components/pages/AboutPage";
 import { FAQPage } from "./components/pages/FAQPage";
 import { ContactPage } from "./components/pages/ContactPage";
@@ -22,8 +21,6 @@ const AppContent: React.FC = () => {
         return <ShopPage />;
       case "product":
         return <ProductDetailPage />;
-      case "sell":
-        return <SellWithUsPage />;
       case "about":
         return <AboutPage />;
       case "faq":

@@ -1,10 +1,9 @@
-import React from 'react';
-import { HeroSection } from '../home/HeroSection';
-import { TrustManifesto } from '../home/TrustManifesto';
-import { FeaturedCurations } from '../home/FeaturedCurations';
-import { ImpactStats } from '../home/ImpactStats';
-import { CommunityVoices } from '../home/CommunityVoices';
-import { CreatorInvitation } from '../home/CreatorInvitation';
+import React from "react";
+import { HeroSection } from "../home/HeroSection";
+import { TrustManifesto } from "../home/TrustManifesto";
+import { FeaturedCurations } from "../home/FeaturedCurations";
+import { ImpactStats } from "../home/ImpactStats";
+import { CommunityVoices } from "../home/CommunityVoices";
 
 export const HomePage: React.FC = () => {
   return (
@@ -14,7 +13,6 @@ export const HomePage: React.FC = () => {
       <FeaturedCurations />
       <ImpactStats />
       <CommunityVoices />
-      <CreatorInvitation />
     </main>
   );
 };

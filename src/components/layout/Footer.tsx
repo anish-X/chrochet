@@ -60,10 +60,9 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="pt-2 text-xs text-espresso-subtle space-y-2 font-mono">
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 <MapPin className="w-3.5 h-3.5 text-terracotta-400" />
-                <span>Sefung Crochet Studio, Jhamsikhel, Lalitpur, Nepal</span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-2">
                 <Phone className="w-3.5 h-3.5 text-sage-400" />
                 <span>WhatsApp / Phone: +977 9801234567</span>
@@ -127,56 +126,6 @@ export const Footer: React.FC = () => {
                   className="hover:text-terracotta-300 transition-colors"
                 >
                   Care & Washing Guide
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Creators Column */}
-          <div className="space-y-3">
-            <h5 className="font-serif text-base text-white font-semibold">
-              For Creators
-            </h5>
-            <ul className="space-y-2 text-xs text-espresso-subtle">
-              <li>
-                <button
-                  onClick={() => navigateTo("sell")}
-                  className="text-honey-400 hover:text-honey-200 font-semibold flex items-center group"
-                >
-                  <span>Sell With Sefung Crochet</span>
-                  <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigateTo("sell")}
-                  className="hover:text-terracotta-300 transition-colors"
-                >
-                  Artisan Commission Structure
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigateTo("sell")}
-                  className="hover:text-terracotta-300 transition-colors"
-                >
-                  Studio Photography Support
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigateTo("faq")}
-                  className="hover:text-terracotta-300 transition-colors"
-                >
-                  Maker Quality Guidelines
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigateTo("contact")}
-                  className="hover:text-terracotta-300 transition-colors"
-                >
-                  Book Studio Sample Review
                 </button>
               </li>
             </ul>

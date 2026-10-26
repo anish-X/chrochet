@@ -1,6 +1,6 @@
-import React from 'react';
-import { useShop } from '../../context/ShopContext';
-import { ShieldCheck, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import React from "react";
+import { useShop } from "../../context/ShopContext";
+import { ShieldCheck, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const TrustManifesto: React.FC = () => {
   const { navigateTo } = useShop();
@@ -8,32 +8,35 @@ export const TrustManifesto: React.FC = () => {
   const trustPillars = [
     {
       icon: ShieldCheck,
-      title: 'Physically Impossible for Machines',
-      badge: 'Zero Automation',
-      description: 'Unlike commercial sweaters which are knitted on high-speed industrial knitting machines, crochet stitches require looping back through prior active loops with an open hook. No mechanical loom in the world has ever solved this. When you hold crochet, you are holding the undeniable work of human hands.',
+      title: "Physically Impossible for Machines",
+      badge: "Zero Automation",
+      description:
+        "Unlike commercial sweaters which are knitted on high-speed industrial knitting machines, crochet stitches require looping back through prior active loops with an open hook. No mechanical loom in the world has ever solved this. When you hold crochet, you are holding the undeniable work of human hands.",
     },
     {
       icon: Sparkles,
-      title: 'Central Studio Quality Inspection',
-      badge: 'Jhamsikhel Lab',
-      description: 'Every completed piece from Bhaktapur, Patan, or Pokhara arrives at our Kathmandu studio for yarn tension testing, seam security verification, and gentle cedar steaming before being packed in compostable packaging.',
-    }
+      title: "Quality You Can Trust",
+      badge: "Quality Assured",
+      description:
+        "Every piece is carefully reviewed by Sefung Crochet to ensure good quality, thoughtful craftsmanship, and attention to detail before it reaches you.",
+    },
   ];
 
   return (
     <section className="py-16 sm:py-24 bg-linen-100/70 border-b border-linen-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             The Sefung Crochet Standard
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-espresso tracking-tight">
-            Why handmade crochet matters — and why you can trust Sefung Crochet.
+            Why handmade crochet matters, and why you can trust Sefung Crochet.
           </h2>
           <p className="text-sm sm:text-base text-umber leading-relaxed font-light">
-            In an era of disposable mass-produced polyester, crochet represents a quiet rebellion: slow, tactile, biodegradable, and inherently human.
+            In a world of disposable, mass produced polyester, crochet offers a
+            more thoughtful choice. It is slow, tactile, and deeply human,
+            celebrating the beauty of making things with care.
           </p>
         </div>
 
@@ -42,7 +45,7 @@ export const TrustManifesto: React.FC = () => {
           {trustPillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
-              <div 
+              <div
                 key={idx}
                 className="bg-white p-6 sm:p-8 rounded-2xl border border-linen-300 shadow-craft-sm hover:shadow-craft-md transition-shadow relative overflow-hidden group"
               >
@@ -71,26 +74,6 @@ export const TrustManifesto: React.FC = () => {
             );
           })}
         </div>
-
-        {/* Bottom Banner callout */}
-        <div className="mt-12 p-6 rounded-2xl bg-espresso text-parchment flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-6">
-          <div className="space-y-1 text-center sm:text-left">
-            <h4 className="font-serif text-lg font-bold text-white">
-              Are you a crochet creator living anywhere in Nepal?
-            </h4>
-            <p className="text-xs text-espresso-subtle max-w-xl">
-              We handle the studio photography, customer support, and Pathao/courier logistics so you can focus on making.
-            </p>
-          </div>
-          <button
-            onClick={() => navigateTo('sell')}
-            className="btn-tactile px-5 py-2.5 bg-honey-500 hover:bg-honey-400 text-espresso font-semibold text-xs rounded-xl shadow-craft-sm transition-colors flex items-center space-x-1.5 flex-shrink-0"
-          >
-            <span>Sell With Us</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
-
       </div>
     </section>
   );
