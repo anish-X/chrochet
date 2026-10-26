@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-3.5 h-3.5 text-honey-400" />
-                <span>namaste@sefungcrochet.com</span>
+                <span>sefungcrochet@gmail.com</span>
               </div>
             </div>
           </div>

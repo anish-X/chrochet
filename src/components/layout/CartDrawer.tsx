@@ -99,13 +99,9 @@ export const CartDrawer: React.FC = () => {
           </div>
 
           {/* Delivery threshold bar */}
-          {checkoutStep === "cart" && cart.length > 0 && (
+          {/* {checkoutStep === "cart" && cart.length > 0 && (
             <div className="px-5 py-3 bg-linen-200/70 border-b border-linen-300">
               <div className="flex items-center justify-between text-xs mb-1.5">
-                <span className="font-mono text-umber flex items-center">
-                  <Truck className="w-3.5 h-3.5 mr-1 text-sage-600" />
-                  Kathmandu Valley Delivery
-                </span>
                 <span className="font-semibold text-espresso">
                   {progressPercent >= 100 ? (
                     <span className="text-sage-700 font-medium">
@@ -131,7 +127,7 @@ export const CartDrawer: React.FC = () => {
                 />
               </div>
             </div>
-          )}
+          )} */}
 
           {/* Body */}
           <div className="flex-1 overflow-y-auto p-5">

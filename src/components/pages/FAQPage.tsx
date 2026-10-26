@@ -98,17 +98,8 @@ export const FAQPage: React.FC = () => {
           <h3 className="font-serif text-xl font-bold text-espresso">
             Still have questions about our pieces or process?
           </h3>
-          <p className="text-xs text-umber max-w-md mx-auto">
-            Our Kathmandu studio team is available 7 days a week on WhatsApp and
-            call. We love talking yarn, tension, and custom sizing.
-          </p>
+
           <div className="pt-2 flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-3">
-            <button
-              onClick={() => navigateTo("contact")}
-              className="px-6 py-2.5 bg-sage-600 hover:bg-sage-700 text-white text-xs font-semibold rounded-xl shadow-craft-sm transition-colors"
-            >
-              Contact Studio Concierge
-            </button>
             <a
               href="https://wa.me/9779801234567"
               target="_blank"
