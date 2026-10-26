@@ -8,8 +8,6 @@ import {
   MessageCircle,
   Send,
   CheckCircle2,
-  Sparkles,
-  ArrowRight,
 } from "lucide-react";
 
 export const ContactPage: React.FC = () => {
@@ -38,21 +36,18 @@ export const ContactPage: React.FC = () => {
     <div className="py-12 sm:py-20 bg-parchment min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
             Get In Touch
           </span>
-          {/* <h1 className="font-serif text-3xl sm:text-5xl font-bold text-espresso tracking-tight mt-1">
-            Visit our Kathmandu Studio.
-          </h1> */}
-          <p className="text-xs sm:text-sm text-umber mt-2 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-umber mt-3 font-light leading-relaxed">
             Whether you want to inspect stitch tension in person, commission a
             bespoke piece, or drop off your creator samples, our doors are
             always open.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left Column: Studio Information */}
           <div className="lg:col-span-5 space-y-6">
             {/* Studio Card */}
@@ -67,12 +62,6 @@ export const ContactPage: React.FC = () => {
                   </h3>
                 </div>
               </div>
-
-              {/* <p className="text-xs text-umber leading-relaxed font-light">
-                Located near the British School in Jhamsikhel. Feel free to come
-                feel the difference between unbleached combed cotton and
-                synthetic yarns firsthand.
-              </p> */}
 
               <div className="pt-2 border-t border-linen-200 space-y-3 text-xs font-mono">
                 <div className="flex items-center space-x-3 text-espresso">
@@ -102,21 +91,6 @@ export const ContactPage: React.FC = () => {
                 </a>
               </div>
             </div>
-
-            {/* Quick Dispatch Card
-            <div className="bg-linen-100 p-6 rounded-3xl border border-linen-300 text-xs text-umber space-y-2">
-              <span className="font-mono text-sage-700 font-bold uppercase text-[10px] block">
-                Logistics & Pickups
-              </span>
-              <h4 className="font-serif font-bold text-espresso text-sm">
-                Same-Day Studio Pickup Available
-              </h4>
-              <p className="leading-relaxed">
-                If you need a gift in Kathmandu Valley today, you can order
-                online and select "Studio Pickup" or call us directly. We will
-                package your pieces in our unbleached boxes immediately.
-              </p>
-            </div> */}
           </div>
 
           {/* Right Column: Contact Form */}

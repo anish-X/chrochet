@@ -1,6 +1,5 @@
 import React from "react";
 import { useShop } from "../../context/ShopContext";
-import { Heart, ShieldCheck, Sparkles, MapPin, ArrowRight } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
   const { navigateTo } = useShop();

@@ -9,7 +9,6 @@ import {
   CheckCircle,
   ShieldCheck,
   Sparkles,
-  MapPin,
 } from "lucide-react";
 
 export const CartDrawer: React.FC = () => {

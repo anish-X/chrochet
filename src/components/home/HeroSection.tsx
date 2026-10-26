@@ -1,13 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useShop } from "../../context/ShopContext";
-import {
-  ArrowRight,
-  Sparkles,
-  ShieldCheck,
-  Heart,
-  Clock,
-  MapPin,
-} from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import gsap from "gsap";
 
 export const HeroSection: React.FC = () => {
@@ -99,22 +92,6 @@ export const HeroSection: React.FC = () => {
                 <span>Sell With Sefung Crochet</span>
               </button>
             </div>
-
-            {/* Trust Pillars Checklist */}
-            {/* <div className="hero-anim-item pt-6 border-t border-linen-300 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono text-umber">
-              <div className="flex items-center space-x-2">
-                <ShieldCheck className="w-4 h-4 text-sage-600 flex-shrink-0" />
-                <span>Zero Factory Production</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-terracotta-500 flex-shrink-0" />
-                <span>12–30 Hours per Piece</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-honey-600 flex-shrink-0" />
-                <span>24h Kathmandu Delivery</span>
-              </div>
-            </div> */}
           </div>
 
           {/* Right Visual Collage */}

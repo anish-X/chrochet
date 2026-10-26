@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useShop } from "../../context/ShopContext";
 import {
   Heart,
-  MapPin,
   Phone,
   Mail,
   ShieldCheck,
@@ -34,7 +33,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-espresso text-parchment-200 pt-16 pb-12 border-t-4 border-sage-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-espresso-soft">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-espresso-soft">
           {/* Brand Bio */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-2.5">
@@ -60,9 +59,6 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="pt-2 text-xs text-espresso-subtle space-y-2 font-mono">
-              {/* <div className="flex items-center space-x-2">
-                <MapPin className="w-3.5 h-3.5 text-terracotta-400" />
-              </div> */}
               <div className="flex items-center space-x-2">
                 <Phone className="w-3.5 h-3.5 text-sage-400" />
                 <span>WhatsApp / Phone: +977 9801234567</span>

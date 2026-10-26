@@ -8,7 +8,6 @@ import {
   X,
   SlidersHorizontal,
   Search,
-  Sparkles,
   RefreshCcw,
   Check,
 } from "lucide-react";

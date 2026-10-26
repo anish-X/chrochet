@@ -3,7 +3,7 @@ import { products } from "../../data/products";
 import { ProductCard } from "../common/ProductCard";
 import { useShop } from "../../context/ShopContext";
 import { Category } from "../../types";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const FeaturedCurations: React.FC = () => {
   const { navigateTo } = useShop();
@@ -47,8 +47,8 @@ export const FeaturedCurations: React.FC = () => {
     <section className="py-16 sm:py-24 bg-parchment border-b border-linen-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
-          <div className="space-y-3">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 sm:mb-8">
+          <div>
             <div className="flex items-center space-x-2">
               <span className="font-mono text-xs uppercase tracking-widest text-sage-700 font-semibold">
                 Featured Drops
@@ -62,7 +62,7 @@ export const FeaturedCurations: React.FC = () => {
 
           <button
             onClick={() => navigateTo("shop", undefined, activeTab)}
-            className="mt-4 md:mt-0 inline-flex items-center space-x-2 text-xs font-semibold font-mono uppercase tracking-wider text-sage-700 hover:text-sage-800 transition-colors group"
+            className="mt-3 md:mt-0 inline-flex items-center space-x-2 text-xs font-semibold font-mono uppercase tracking-wider text-sage-700 hover:text-sage-800 transition-colors group"
           >
             <span>Explore Entire Catalog</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

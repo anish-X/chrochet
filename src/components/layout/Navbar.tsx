@@ -8,7 +8,6 @@ import {
   X,
   Sparkles,
   ArrowRight,
-  MapPin,
 } from "lucide-react";
 
 export const Navbar: React.FC = () => {
@@ -48,37 +47,6 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Top Heritage Notice Bar
-      <div className="bg-espresso text-parchment-200 text-xs py-2 px-4 border-b border-espresso-soft">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-[11px] sm:text-xs">
-          <div className="flex items-center space-x-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-honey-400 animate-pulse"></span>
-            <span className="font-mono tracking-wide text-honey-200">
-              NEPAL'S HANDMADE CROCHET GUILD
-            </span>
-            <span className="hidden md:inline text-umber-subtle">•</span>
-            <span className="hidden md:inline text-espresso-subtle">
-              Zero machine stitches. 100% human-hooked across Kathmandu, Patan &
-              Pokhara.
-            </span>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <span className="hidden sm:flex items-center text-espresso-subtle font-mono text-[11px]">
-              <MapPin className="w-3 h-3 mr-1 text-terracotta-400" />
-              Jhamsikhel Studio Open
-            </span>
-            <button
-              onClick={() => navigateTo("sell")}
-              className="text-honey-400 hover:text-honey-200 font-medium transition-colors flex items-center group text-[11px] sm:text-xs"
-            >
-              <span>Are you a creator?</span>
-              <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-0.5" />
-            </button>
-          </div>
-        </div>
-      </div> */}
-
       {/* Main Sticky Navigation */}
       <header className="sticky top-0 z-40 bg-parchment/95 backdrop-blur-md border-b border-linen-300 transition-all duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,9 +110,6 @@ export const Navbar: React.FC = () => {
                     <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-espresso transition-colors group-hover:text-sage-700">
                       SEFUNG CROCHET
                     </span>
-                    {/* <span className="text-[11px] font-mono text-sage-600 uppercase font-semibold">
-                      .np
-                    </span> */}
                   </div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-umber-muted">
                     सेफुङ • Nepal Handmade

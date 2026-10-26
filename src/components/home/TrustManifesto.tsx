@@ -1,9 +1,7 @@
 import React from "react";
-import { useShop } from "../../context/ShopContext";
-import { ShieldCheck, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
 
 export const TrustManifesto: React.FC = () => {
-  const { navigateTo } = useShop();
 
   const trustPillars = [
     {
